@@ -1,7 +1,23 @@
 <?php 
 
 if (current_user_can('shop_manager')) {
+	
+	//include_once ( get_template_directory() . '/functions/css/admin.css' );
+	
+	function my_admin_head() {
+	$url = get_option('siteurl');
+    $dir = $url . '/wp-content/themes/mystile/';
+    echo '<link rel="stylesheet" type="text/css" href="' .$dir. '/functions/css/adminstyle.css'. '">';
+		
+		/*echo '<style type="text/css">
+           #wphead{background:#592222}
+           #footer{background:#592222}
+           #footer-upgrade{background:#592222}
+         </style>'; */
+	}
 
+	add_action('admin_head', 'my_admin_head');
+	
 	//Remove unecessary user roles
 	$role = get_role('shop_manager');	
 	$role->remove_cap('edit_others_pages');
