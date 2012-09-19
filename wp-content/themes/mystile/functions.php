@@ -53,8 +53,21 @@ function testing() {
 
 add_action( 'admin_head', 'testing' ); */
 
+$role = get_role('shop_manager');
 
-if (!current_user_can('update_core')) {
+if (current_user_can('manage_woocommerce') && !current_user_can('update_core')) {
+	
+	
+	$role->remove_cap('edit_others_pages');
+	$role->remove_cap('edit_others_posts');
+	$role->remove_cap('delete_others_pages');
+	$role->remove_cap('delete_others_posts');
+	$role->remove_cap('publish_posts');
+	$role->remove_cap('publish_pages');
+	$role->remove_cap('delete_posts');
+	$role->remove_cap('delete_pages');
+	
+
 	function remove_menu_items() {
 	  global $menu;
 	  $restricted = array(__('Links'), __('Comments'), __('Media'),
