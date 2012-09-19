@@ -62,7 +62,7 @@ function remove_menu_items() {
 
 add_action('admin_menu', 'remove_menu_items');
 
-
+//Remove Menus
 function remove_submenus() {
   global $submenu;
   unset($submenu['users.php'][5]); //All Users
