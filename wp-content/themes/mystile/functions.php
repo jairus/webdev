@@ -40,60 +40,7 @@ foreach ( $includes as $i ) {
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
-
-if (current_user_can('shop_manager')) {
-
-	$role = get_role('shop_manager');	
-	$role->remove_cap('edit_others_pages');
-	$role->remove_cap('edit_others_posts');
-	$role->remove_cap('delete_others_pages');
-	$role->remove_cap('delete_others_posts');
-	$role->remove_cap('publish_posts');
-	$role->remove_cap('publish_pages');
-	$role->remove_cap('delete_posts');
-	$role->remove_cap('delete_pages');
-	
-	
-
-	function remove_menu_items() {
-	  global $menu;
-	  $restricted = array(__('Links'), __('Comments'), __('Media'),
-	  __('Plugins'), __('Tools'), __('Settings'), __('Pages'), __('Appearance'), __('Posts'));
-	  end ($menu);
-	  while (prev($menu)){
-		$value = explode(' ',$menu[key($menu)][0]);
-		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){
-		  unset($menu[key($menu)]);}
-		}
-	  }
-	
-	add_action('admin_menu', 'remove_menu_items');
-	
-	//Remove Menus
-	function remove_submenus() {
-	  global $submenu;
-	  unset($submenu['users.php'][5]); //All Users
-	  unset($submenu['users.php'][10]); //Add Users
-	  unset($submenu['index.php'][10]); // Updates'.
-	}
-	
-	add_action('admin_menu', 'remove_submenus');
-	
-	function example_remove_dashboard_widgets() {
-	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal');
-	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal');
-	} 
-
-	// Hoook into the 'wp_dashboard_setup' action to register our function
-	
-	add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
-	
-}
+include_once ( get_template_directory() . '/functions/function-userroles.php' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
