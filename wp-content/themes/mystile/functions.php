@@ -40,24 +40,10 @@ foreach ( $includes as $i ) {
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
-/*add_role('shop_owner', 'Shop Owner', array( 'manage_shop' ));
-$role = get_role('shop_owner');
-$role->remove_cap('edit_others_pages');
-$role->remove_cap('edit_others_posts');
-$role->remove_cap('delete_others_pages');
-$role->remove_cap('delete_others_posts');
 
-function testing() {
-  echo 'Hello World!';
-}
+if (current_user_can('shop_manager')) {
 
-add_action( 'admin_head', 'testing' ); */
-
-$role = get_role('shop_manager');
-
-if (current_user_can('manage_woocommerce') && !current_user_can('update_core')) {
-	
-	
+	$role = get_role('shop_manager');	
 	$role->remove_cap('edit_others_pages');
 	$role->remove_cap('edit_others_posts');
 	$role->remove_cap('delete_others_pages');
@@ -66,6 +52,7 @@ if (current_user_can('manage_woocommerce') && !current_user_can('update_core')) 
 	$role->remove_cap('publish_pages');
 	$role->remove_cap('delete_posts');
 	$role->remove_cap('delete_pages');
+	
 	
 
 	function remove_menu_items() {
@@ -91,7 +78,23 @@ if (current_user_can('manage_woocommerce') && !current_user_can('update_core')) 
 	}
 	
 	add_action('admin_menu', 'remove_submenus');
+	
+	function example_remove_dashboard_widgets() {
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal');
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal');
+	} 
+
+	// Hoook into the 'wp_dashboard_setup' action to register our function
+	
+	add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
+	
 }
+
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/
