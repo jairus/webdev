@@ -40,7 +40,7 @@ foreach ( $includes as $i ) {
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
-include_once ( get_template_directory() . '/functions/function-userroles.php' );
+//include_once ( get_template_directory() . '/functions/function-userroles.php' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */

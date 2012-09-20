@@ -1,6 +1,5 @@
-#wphead {
-  background:#592222
-}
-
+#wphead {background:#592222}
+#adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu, #adminmenu .wp-submenu-wrap, .folded #adminmenu .wp-has-current-submenu .wp-submenu{width: 100%; float:left; border: 1px solid red; }
 #footer{background:#592222}
 #footer-upgrade{background:#592222}
+#collapse-menu{display:none; }
