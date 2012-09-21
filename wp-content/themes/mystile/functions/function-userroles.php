@@ -28,8 +28,8 @@ if (current_user_can('shop_manager')) {
 	$role->remove_cap('publish_pages');
 	$role->remove_cap('delete_posts');
 	$role->remove_cap('delete_pages');
-	
-	
+	  
+		
 	//Remove Main Menu Items
 	function remove_menu_items() {
 	  global $menu;
