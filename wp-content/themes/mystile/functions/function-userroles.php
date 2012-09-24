@@ -48,12 +48,6 @@ if (current_user_can('shop_manager')) {
 	$url = get_option('siteurl');
     $dir = $url . '/wp-content/themes/mystile/';
     echo '<link rel="stylesheet" type="text/css" href="' .$dir. '/functions/css/adminstyle.css'. '">';
-		
-		/*echo '<style type="text/css">
-           #wphead{background:#592222}
-           #footer{background:#592222}
-           #footer-upgrade{background:#592222}
-         </style>'; */
 	}
 
 	add_action('admin_head', 'my_admin_head');
@@ -124,18 +118,5 @@ if (current_user_can('shop_manager')) {
 	
 	//hook function to wp_logout action
 	add_action('wp_logout','logout_redirect');
-	
-	
-	//remove flyout menus in active
-	
-	function remove_flyout() {
-		echo '<style type="text/css">
-			.folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{
-				display: none;
-			}
-		</style>';
-	}
-	add_action('admin_head', 'remove_flyout');
-	
 }
  ?>

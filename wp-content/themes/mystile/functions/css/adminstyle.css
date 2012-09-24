@@ -30,3 +30,4 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #wpbody-content{ float:left; width: 100%; }
 .wrap{margin: 54px 15px 0 0;}
 #wpcontent, #footer{ width: 100%; margin: 0; }
+.folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{display: none;}
