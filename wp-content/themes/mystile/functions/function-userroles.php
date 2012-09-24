@@ -1,5 +1,45 @@
 <?php 
 
+
+//add new page
+
+	if (isset($_GET['activated']) && is_admin()){
+		$new_page_title = 'Manager Login';
+		$new_page_content = '[loginform]';
+		$new_page_template = ''; //ex. template-custom.php. Leave blank if you don't want a custom page template.
+		//don't change the code bellow, unless you know what you're doing
+		$page_check = get_page_by_title($new_page_title);
+		$new_page = array(
+			'post_type' => 'page',
+			'post_title' => $new_page_title,
+			'post_content' => $new_page_content,
+			'post_status' => 'publish',
+			'post_author' => 1,
+		);
+		if(!isset($page_check->ID)){
+			$new_page_id = wp_insert_post($new_page);
+			if(!empty($new_page_template)){
+				update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+			}
+		}
+		
+		$homeSet = get_page_by_title( 'Home' );
+		update_option( 'page_on_front', $homeSet->ID );
+		update_option( 'show_on_front', 'page' );
+	
+	}
+
+	
+	
+	function custom_login_form() {
+	$args = array('redirect' => 'get_bloginfo("url")/manager-login/'); // This is where you redirect your users to where ever you like.
+	wp_login_form($args);
+	}
+	 
+	add_shortcode('loginform', 'custom_login_form'); // You place this shortcode [loginform] onto a page in your wp-admin area
+	
+	
+
 if (current_user_can('shop_manager')) {
 	
 	//include_once ( get_template_directory() . '/functions/css/admin.css' );
