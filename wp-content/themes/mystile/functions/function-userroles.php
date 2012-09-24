@@ -41,9 +41,7 @@
 	
 
 if (current_user_can('shop_manager')) {
-	
-	//include_once ( get_template_directory() . '/functions/css/admin.css' );
-	
+
 	function my_admin_head() {
 	$url = get_option('siteurl');
     $dir = $url . '/wp-content/themes/mystile/';
@@ -118,5 +116,16 @@ if (current_user_can('shop_manager')) {
 	
 	//hook function to wp_logout action
 	add_action('wp_logout','logout_redirect');
+	
+	
+	//customize wp-admin footer
+	
+	// Custom WordPress Footer
+
+	function custom_footer () {
+		echo '&copy; 2012 - Zurpay.com';
+	}
+	add_filter('admin_footer_text', 'custom_footer');
+
 }
  ?>
