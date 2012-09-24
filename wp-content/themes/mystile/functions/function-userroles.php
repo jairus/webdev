@@ -113,5 +113,17 @@ if (current_user_can('shop_manager')) {
 	// Hook into the 'wp_dashboard_setup' action to register our function
 	add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
 	
+	
+	//use for logout redirect
+	
+	//function to redirect after logout
+	function logout_redirect(){
+	  wp_redirect( home_url('manager-login') ); 
+	  exit; 
+	}
+	
+	//hook function to wp_logout action
+	add_action('wp_logout','logout_redirect');
+	
 }
  ?>
