@@ -125,5 +125,17 @@ if (current_user_can('shop_manager')) {
 	//hook function to wp_logout action
 	add_action('wp_logout','logout_redirect');
 	
+	
+	//remove flyout menus in active
+	
+	function remove_flyout() {
+		echo '<style type="text/css">
+			.folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{
+				display: none;
+			}
+		</style>';
+	}
+	add_action('admin_head', 'remove_flyout');
+	
 }
  ?>
