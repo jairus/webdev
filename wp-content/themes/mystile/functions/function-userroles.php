@@ -60,11 +60,17 @@ if (current_user_can('shop_manager')) {
 	$role->remove_cap('publish_pages');
 	$role->remove_cap('delete_posts');
 	$role->remove_cap('delete_pages');
-	  
-		
-	//Remove Main Menu Items
-	function remove_menu_items() {
+
+	
+	//Remove Sub-Menu items
+	function remove_submenus() {
+	  global $submenu;
 	  global $menu;
+	  unset($submenu['users.php'][5]); //All Users
+	  unset($submenu['users.php'][10]); //Add Users
+	  unset($submenu['index.php'][10]); // Updates'.
+	  
+	  
 	  $restricted = array(__('Links'), __('Comments'), __('Media'),
 	  __('Plugins'), __('Tools'), __('Settings'), __('Pages'), __('Appearance'), __('Posts'));
 	  end ($menu);
@@ -73,18 +79,6 @@ if (current_user_can('shop_manager')) {
 		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){
 		  unset($menu[key($menu)]);}
 		}
-	  }
-	  
-	//Hook into admin menu
-	add_action('admin_menu', 'remove_menu_items');
-	
-	
-	//Remove Sub-Menu items
-	function remove_submenus() {
-	  global $submenu;
-	  unset($submenu['users.php'][5]); //All Users
-	  unset($submenu['users.php'][10]); //Add Users
-	  unset($submenu['index.php'][10]); // Updates'.
 	}
 	//Hook into admin menu
 	add_action('admin_menu', 'remove_submenus');
@@ -106,8 +100,6 @@ if (current_user_can('shop_manager')) {
 	add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
 	
 	
-	//use for logout redirect
-	
 	//function to redirect after logout
 	function logout_redirect(){
 	  wp_redirect( home_url('manager-login') ); 
@@ -117,8 +109,6 @@ if (current_user_can('shop_manager')) {
 	//hook function to wp_logout action
 	add_action('wp_logout','logout_redirect');
 	
-	
-	//customize wp-admin footer
 	
 	// Custom WordPress Footer
 
