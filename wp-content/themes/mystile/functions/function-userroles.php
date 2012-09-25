@@ -51,13 +51,17 @@ if (current_user_can('shop_manager')) {
 
 	add_action('admin_head', 'my_admin_head');
 	
-	//add new menu: Add Product (sub to main)
+	//add new menu: Add Product (sub to main) + logout button (on test)
 	function new_prod_menu(){
 		global $menu;
-		$menu[99] = array('Add Product','read','separator','Add Product','menu-top menu-nav');
-		add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', 'post-new.php', '', 99);
+		$logouturl = wp_logout_url();
+		$menu[99] = array('Add Product','read','post-new.php?post_type=product','','menu-top menu-nav');
+		add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', '', '', 99); 
+		$menu[100] = array('Log Out','read', $logouturl ,'','menu-top menu-nav');
+		add_menu_page(__('Log Out', 'logout-menu'), __('Log Out', 'logout-menu'), 'wp_logout', '', '', 100);
 	}
 	add_action('admin_menu', 'new_prod_menu');
+	
 	
 	//Remove unecessary user roles
 	$role = get_role('shop_manager');	
