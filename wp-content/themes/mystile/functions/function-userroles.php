@@ -83,7 +83,8 @@ if (current_user_can('shop_manager')) {
 	//Hook into admin menu
 	add_action('admin_menu', 'remove_submenus');
 	
-	
+	//remove admin bar
+	show_admin_bar(false);
 	
 	//Remove unecessary Dashboard Widgets
 	function example_remove_dashboard_widgets() {
