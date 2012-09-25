@@ -10,7 +10,6 @@ border-bottom: 1px solid #000000; }
 .wp-first-item current menu-top menu-top-first menu-icon-dashboard menu-top-first menu-top-last menu-top-last{float:left;}
 #adminmenu .wp-submenu ul {background:none; padding: 0;}
 #adminmenu li.wp-menu-open {border: none;} 
-#adminmenu li.wp-menu-open .wp-submenu-wrap{margin-top: 10px; }
 #adminmenu .wp-submenu-wrap, #adminmenu .wp-submenu ul{ position:relative; float:left;  background:#FFFFFF;/*background:none; border: 1px solid red;*/}
 #adminmenu .wp-submenu li{ height: 20px; padding-top: 5px; padding-bottom: 5px; text-align:left; float:left; display:block;}
 #adminmenu .wp-submenu li a{ height: 20px; display:block;}
@@ -26,7 +25,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #adminmenu li .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu{ overflow:visible; position:relative; left:20px;}
 #adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .wp-submenu .wp-submenu-head{float:left;}
 .wp-menu-arrow{ display:none; }
-#footer{background: -moz-linear-gradient(center top , #414141, #323232) repeat-x scroll 0 0 #3A3A3A;}
+#footer{background: -moz-linear-gradient(center top , #414141, #323232) repeat-x scroll 0 0 #3A3A3A; background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#323232)) repeat-x scroll 0 0 #3A3A3A;}
 /*#footer-upgrade{background:#592222}*/
 #collapse-menu{display:none; }
 #wpbody{ position:static;}
@@ -34,3 +33,6 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 .wrap{margin: 54px 0 0 0;}
 #wpcontent, #footer{ width: 99.99%; margin: 0; }
 .folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{display: none;}
+#wpadminbar{display:none;}
+html.wp-toolbar{padding-top:0px !important;}  
+#adminmenu .wp-has-current-submenu .wp-submenu-wrap{ box-shadow:2px 2px 5px rgba(0, 0, 0, 0.4); left:20px;}

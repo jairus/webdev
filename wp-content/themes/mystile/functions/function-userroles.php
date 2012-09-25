@@ -28,7 +28,8 @@
 		update_option( 'show_on_front', 'page' );
 	
 	}
-
+	
+	
 	
 	
 	function custom_login_form() {
@@ -50,6 +51,14 @@ if (current_user_can('shop_manager')) {
 
 	add_action('admin_head', 'my_admin_head');
 	
+	//add new menu: Add Product (sub to main)
+	function new_prod_menu(){
+		global $menu;
+		$menu[99] = array('Add Product','read','separator','Add Product','menu-top menu-nav');
+		add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', 'post-new.php', '', 99);
+	}
+	add_action('admin_menu', 'new_prod_menu');
+	
 	//Remove unecessary user roles
 	$role = get_role('shop_manager');	
 	$role->remove_cap('edit_others_pages');
@@ -68,7 +77,7 @@ if (current_user_can('shop_manager')) {
 	  global $menu;
 	  unset($submenu['users.php'][5]); //All Users
 	  unset($submenu['users.php'][10]); //Add Users
-	  unset($submenu['index.php'][10]); // Updates'.
+	  unset($submenu['index.php'][10]); // Updates
 	  
 	  
 	  $restricted = array(__('Links'), __('Comments'), __('Media'),
@@ -82,9 +91,6 @@ if (current_user_can('shop_manager')) {
 	}
 	//Hook into admin menu
 	add_action('admin_menu', 'remove_submenus');
-	
-	//remove admin bar
-	show_admin_bar(false);
 	
 	//Remove unecessary Dashboard Widgets
 	function example_remove_dashboard_widgets() {
@@ -100,7 +106,7 @@ if (current_user_can('shop_manager')) {
 	// Hook into the 'wp_dashboard_setup' action to register our function
 	add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
 	
-	
+
 	//function to redirect after logout
 	function logout_redirect(){
 	  wp_redirect( home_url('manager-login') ); 
