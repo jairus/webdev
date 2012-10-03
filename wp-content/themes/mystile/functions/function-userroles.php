@@ -74,7 +74,7 @@ if (current_user_can('shop_manager')) {
 	}
 	add_action('admin_menu', 'new_prod_menu');
 	
-	function itheme_func(){
+	function try_panel(){
 		echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br/></div><h2>Add Product</h2></div>';	
 	}
 	
@@ -145,6 +145,16 @@ if (current_user_can('shop_manager')) {
 	
 	//remove color picker for the admin scheme
 	remove_action("admin_color_scheme_picker", "admin_color_scheme_picker");
+	
+	//renaming woocommerce title
+	add_filter('gettext','change_post_to_article');
+	add_filter('ngettext','change_post_to_article');
+	
+	function change_post_to_article($translated){
+		$translated = str_ireplace('WooCommerce', 'Management', $translated);
+		return $translated;	
+	}
+	
 
 }
  ?>
