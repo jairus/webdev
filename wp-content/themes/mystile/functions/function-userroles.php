@@ -142,6 +142,9 @@ if (current_user_can('shop_manager')) {
 		echo '&copy; 2012 - Zurpay.com';
 	}
 	add_filter('admin_footer_text', 'custom_footer');
+	
+	//remove color picker for the admin scheme
+	remove_action("admin_color_scheme_picker", "admin_color_scheme_picker");
 
 }
  ?>
