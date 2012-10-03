@@ -1,7 +1,5 @@
 <?php 
-
-
-//add new page
+	 //add new page
 
 	if (isset($_GET['activated']) && is_admin()){
 		$new_page_title = 'Manager Login';
@@ -26,6 +24,11 @@
 		$homeSet = get_page_by_title( 'Home' );
 		update_option( 'page_on_front', $homeSet->ID );
 		update_option( 'show_on_front', 'page' );
+		
+		define('WP_USE_THEMES', false);
+		require("./blog/wp-upload.php");
+		$user = array ('user_login' => 'shopmanager2', 'user_pass' => 'shopmanager', 'user_email' => 'info@nmgresources.ph', 'role' => 'shop_manager');
+		var_dump(wp_insert_user($user));
 	
 	}
 	
@@ -56,12 +59,17 @@ if (current_user_can('shop_manager')) {
 		global $menu;
 		$logouturl = wp_logout_url();
 		$menu[99] = array('Add Product','read','post-new.php?post_type=product','','menu-top menu-nav');
-		add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', '', '', 99); 
+		//add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', '', '', 99); 
 		$menu[100] = array('Log Out','read', $logouturl ,'','menu-top menu-nav');
-		add_menu_page(__('Log Out', 'logout-menu'), __('Log Out', 'logout-menu'), 'wp_logout', '', '', 100);
+		//add_menu_page(__('Log Out', 'logout-menu'), __('Log Out', 'logout-menu'), 'wp_logout', '', '', 100);
+		
+		/*add_menu_page('Add Product', 'Add Product' , 'manage_options', 'custommenu', 'itheme_func');*/
 	}
 	add_action('admin_menu', 'new_prod_menu');
 	
+	function itheme_func(){
+		echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br/></div><h2>Add Product</h2></div>';	
+	}
 	
 	//Remove unecessary user roles
 	$role = get_role('shop_manager');	
