@@ -80,3 +80,13 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 
 /*font style*/
 div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidget, #dashboard_right_now td.b, #dashboard-widgets h4, .tool-box .title, #poststuff h3, .metabox-holder h3, .pressthis a, #your-profile legend, .inline-edit-row fieldset span.title, .inline-edit-row fieldset span.checkbox-title, .tablenav .displaying-num, .widefat th, .quicktags, .search { font-family: "Arial Black", Gadget, sans-serif;}
+
+/* woocommerce version display */
+#wp-version-message{display:none;}
+
+/*custom icon for the custom admin panel link*/
+.wp-menu-image{background:url(../images/zurpay-icons.png) no-repeat;}
+#menu-add-product .wp-menu-image{ background-position: -520px 3px; }
+#adminmenu #menu-add-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-add-product:hover div.wp-menu-image{background-position: -520px -24px; }
+#menu-log-out .wp-menu-image {background-position: -653px 3px; }
+#adminmenu #menu-log-out.wp-menu-open div.wp-menu-image, #adminmenu #menu-log-out:hover div.wp-menu-image{background-position: -653px -24px; }
