@@ -151,7 +151,7 @@ if (current_user_can('shop_manager')) {
 	add_filter('ngettext','change_post_to_article');
 	
 	function change_post_to_article($translated){
-		$translated = str_ireplace('WooCommerce', 'Management', $translated);
+		$translated = str_ireplace('WooCommerce', 'Shop', $translated);
 		return $translated;	
 	}
 	

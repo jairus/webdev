@@ -36,3 +36,33 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #wpadminbar{display:none;}
 html.wp-toolbar{padding-top:0px !important;}  
 #adminmenu .wp-has-current-submenu .wp-submenu-wrap{ box-shadow:2px 2px 5px rgba(0, 0, 0, 0.4); left:20px;}
+#adminmenu #menu-posts-product div.wp-menu-image, #adminmenu #menu-posts-shop_order div.wp-menu-image, #adminmenu #menu-posts-shop_coupon 
+
+/*for zurpay icons*/
+div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{background: url(../images/zurpay-icons.png) no-repeat;} 
+
+#adminmenu #toplevel_page_woocommerce div.wp-menu-image{background-position: -43px 2px;}
+/*for wordpress icon*/
+.icon16.icon-dashboard, .menu-icon-dashboard div.wp-menu-image, .icon16.icon-post, .menu-icon-post div.wp-menu-image, .icon16.icon-media, .menu-icon-media div.wp-menu-image, .icon16.icon-links, .menu-icon-links div.wp-menu-image, .icon16.icon-page, .menu-icon-page div.wp-menu-image, .icon16.icon-comments, .menu-icon-comments div.wp-menu-image, .icon16.icon-appearance, .menu-icon-appearance div.wp-menu-image, .icon16.icon-plugins, .menu-icon-plugins div.wp-menu-image, .icon16.icon-users, .menu-icon-users div.wp-menu-image, .icon16.icon-tools, .menu-icon-tools div.wp-menu-image, .icon16.icon-settings, .menu-icon-settings div.wp-menu-image, .icon16.icon-site, .menu-icon-site div.wp-menu-image{background:url(../images/zurpay-icons.png) no-repeat;}
+
+/*shop active*/
+#adminmenu #toplevel_page_woocommerce.wp-menu-open div.wp-menu-image, #adminmenu #toplevel_page_woocommerce:hover div.wp-menu-image { background-position: -43px -25px;}
+
+/*product inactive*/
+#adminmenu #menu-posts-product div.wp-menu-image{background-position: -218px 3px;}
+
+/*product active*/
+#adminmenu #menu-posts-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-posts-product:hover div.wp-menu-image{ background-position: -218px -24px; }
+
+/*dashboard inactive*/
+.icon16.icon-dashboard, #adminmenu .menu-icon-dashboard div.wp-menu-image{background-position: 0px 3px; }
+
+/*dashboard active*/
+#adminmenu .menu-icon-dashboard:hover div.wp-menu-image, #adminmenu .menu-icon-dashboard.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-dashboard.current div.wp-menu-image{ background-position: 0px -24px }
+
+/*profile inactive*/
+.icon16.icon-users, #adminmenu .menu-icon-users div.wp-menu-image{background-position: -608px 3px;}
+
+/*profile active */
+
+#adminmenu .menu-icon-users:hover div.wp-menu-image, #adminmenu .menu-icon-users.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-users.current div.wp-menu-image {background-position: -608px -24px; }
