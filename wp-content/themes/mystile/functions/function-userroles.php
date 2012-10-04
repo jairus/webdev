@@ -40,8 +40,6 @@
 	}
 	
 	
-	
-	
 	function custom_login_form() {
 	$args = array('redirect' => 'get_bloginfo("url")/manager-login/'); // This is where you redirect your users to where ever you like.
 	wp_login_form($args);
@@ -49,8 +47,6 @@
 	 
 	add_shortcode('loginform', 'custom_login_form'); // You place this shortcode [loginform] onto a page in your wp-admin area
 	
-	
-
 if (current_user_can('shop_manager')) {
 
 	function my_admin_head() {
@@ -65,19 +61,11 @@ if (current_user_can('shop_manager')) {
 	function new_prod_menu(){
 		global $menu;
 		$logouturl = wp_logout_url();
-		$menu[99] = array('Add Product','read','post-new.php?post_type=product','','menu-top menu-nav');
-		//add_menu_page(__('Add Product', 'prod-menus'), __('Add Product', 'prod-menus'), 'add_products', '', '', 99); 
-		$menu[100] = array('Log Out','read', $logouturl ,'','menu-top menu-nav');
-		//add_menu_page(__('Log Out', 'logout-menu'), __('Log Out', 'logout-menu'), 'wp_logout', '', '', 100);
-		
-		/*add_menu_page('Add Product', 'Add Product' , 'manage_options', 'custommenu', 'itheme_func');*/
+		$menu[99] = array('Add Product','read','post-new.php?post_type=product','','menu-top', 'menu-add-product', 'div');
+		$menu[100] = array('Log Out','read', $logouturl ,'','menu-top', 'menu-log-out', 'div');
 	}
 	add_action('admin_menu', 'new_prod_menu');
-	
-	function try_panel(){
-		echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br/></div><h2>Add Product</h2></div>';	
-	}
-	
+
 	//Remove unecessary user roles
 	$role = get_role('shop_manager');	
 	$role->remove_cap('edit_others_pages');
@@ -89,7 +77,6 @@ if (current_user_can('shop_manager')) {
 	$role->remove_cap('delete_posts');
 	$role->remove_cap('delete_pages');
 
-	
 	//Remove Sub-Menu items
 	function remove_submenus() {
 	  global $submenu;
@@ -135,7 +122,6 @@ if (current_user_can('shop_manager')) {
 	//hook function to wp_logout action
 	add_action('wp_logout','logout_redirect');
 	
-	
 	// Custom WordPress Footer
 
 	function custom_footer () {
@@ -154,7 +140,5 @@ if (current_user_can('shop_manager')) {
 		$translated = str_ireplace('WooCommerce', 'Shop', $translated);
 		return $translated;	
 	}
-	
-
 }
  ?>
