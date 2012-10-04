@@ -66,3 +66,11 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 /*profile active */
 
 #adminmenu .menu-icon-users:hover div.wp-menu-image, #adminmenu .menu-icon-users.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-users.current div.wp-menu-image {background-position: -608px -24px; }
+
+/*wp x2 icon */
+.icon32{float: left; height: 38px; margin: 7px 8px 0 2px; width: 40px;}
+
+.icon32.icon-post, #icon-edit, #icon-post, .icon32.icon-dashboard, #icon-index, .icon32.iconzcon-page, .icon32.icon-comments, #icon-edit-comments, .icon32.icon-appearance, #icon-themes, .icon32.icon-plugins, #icon-plugins, .icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit, .icon32.icon-tools, #icon-tools, #icon-admin, .icon32.icon-settings, #icon-options-general, .icon32.icon-site,#icon-ms-admin{background:url(../images/zurpay-icons-x2.png) no-repeat;}
+
+/*dashboard icon*/
+.icon32.icon-dashboard, #icon-index {background-position: -4px -5px; }
