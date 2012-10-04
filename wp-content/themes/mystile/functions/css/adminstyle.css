@@ -74,3 +74,9 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 
 /*dashboard icon*/
 .icon32.icon-dashboard, #icon-index {background-position: -4px -5px; }
+
+/*profile icon*/
+.icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit{background-position: -1002px -5px; }
+
+/*font style*/
+div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidget, #dashboard_right_now td.b, #dashboard-widgets h4, .tool-box .title, #poststuff h3, .metabox-holder h3, .pressthis a, #your-profile legend, .inline-edit-row fieldset span.title, .inline-edit-row fieldset span.checkbox-title, .tablenav .displaying-num, .widefat th, .quicktags, .search { font-family: "Arial Black", Gadget, sans-serif;}
