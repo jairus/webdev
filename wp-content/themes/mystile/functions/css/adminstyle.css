@@ -29,7 +29,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 /*#footer-upgrade{background:#592222}*/
 #collapse-menu{display:none; }
 #wpbody{ position:static;}
-#wpbody-content{ float:left; width: 99.99%; }
+#wpbody-content{ float: left; margin-left: 25px; width: 90%; }
 .wrap{margin: 54px 0 0 0;}
 #wpcontent, #footer{ width: 99.99%; margin: 0; }
 .folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{display: none;}
@@ -79,7 +79,7 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 .icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit{background-position: -1002px -5px; }
 
 /*font style*/
-div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidget, #dashboard_right_now td.b, #dashboard-widgets h4, .tool-box .title, #poststuff h3, .metabox-holder h3, .pressthis a, #your-profile legend, .inline-edit-row fieldset span.title, .inline-edit-row fieldset span.checkbox-title, .tablenav .displaying-num, .widefat th, .quicktags, .search { font-family: "Arial Black", Gadget, sans-serif;}
+div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidget, #dashboard_right_now td.b, #dashboard-widgets h4, .tool-box .title, #poststuff h3, .metabox-holder h3, .pressthis a, #your-profile legend, .inline-edit-row fieldset span.title, .inline-edit-row fieldset span.checkbox-title, .tablenav .displaying-num, .widefat th, .quicktags, .search { font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 
 /* woocommerce version display */
 #wp-version-message{display:none;}
@@ -90,3 +90,24 @@ div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidg
 #adminmenu #menu-add-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-add-product:hover div.wp-menu-image{background-position: -520px -24px; }
 #menu-log-out .wp-menu-image {background-position: -653px 3px; }
 #adminmenu #menu-log-out.wp-menu-open div.wp-menu-image, #adminmenu #menu-log-out:hover div.wp-menu-image{background-position: -653px -24px; }
+#icon-woocommerce, .woocommerce_icon, .icon32-posts-product, .icon32-posts-shop_order, .icon32-posts-shop_coupon, .icon32-posts-product_variation{ background:url(../images/zurpay-ico.png); }
+
+h3 handle
+.widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{ background-image:-moz-linear-gradient(center top , #ff901a, #fdb428); /*background:#fdb428;*/}
+
+/*h3 text shadow */
+.widget .widget-top, .postbox h3, .stuffbox h3 { color: #FFF; text-shadow:0 1px 0 #000; }
+.sidebar-name:hover h3, .postbox h3:hover {text-shadow:0 1px 0 #FFF;}
+
+/*sub menu highlight focus*/
+#adminmenu .wp-submenu a:hover, #adminmenu .wp-submenu a:focus{ background-color: #fdb428; color: #fff;}
+
+/*box border */
+.widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox { border-color:#fdb428; }
+
+/*down arrow on handle*/
+.meta-box-sortables .postbox:hover .handlediv{ background: url(../images/admin-arrows-white.png) no-repeat scroll 6px 7px transparent;}
+
+/*monthly sales widget link */
+#dashboard-widgets h3 a{ text-decoration:none; color:#FFF; text-shadow:0 1px 0 #333; }
+#dashboard-widgets h3 a:hover{text-decoration:underline;}
