@@ -29,8 +29,8 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 /*#footer-upgrade{background:#592222}*/
 #collapse-menu{display:none; }
 #wpbody{ position:static;}
-#wpbody-content{ float: left; margin-left: 25px; width: 90%; }
-.wrap{margin: 54px 0 0 0;}
+#wpbody-content{ float: left; margin-left: 25px; margin-right: 20px; width: 97%; }
+/*.wrap{margin: 54px 0 0 0;}*/
 #wpcontent, #footer{ width: 99.99%; margin: 0; }
 .folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{display: none;}
 #wpadminbar{display:none;}
