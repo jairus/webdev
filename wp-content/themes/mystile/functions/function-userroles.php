@@ -152,7 +152,7 @@ if (current_user_can('shop_manager')) {
         if($post->post_type == $my_post_type){
             echo '
                 <style type="text/css">
-                    #minor-publishing,#delete-action,#misc-publishing-actions, #woothemes-settings, #postexcerpt
+                    #delete-action,#misc-publishing-actions, #woothemes-settings, #postexcerpt, #ed_toolbar, #wp-content-editor-tools
                   	{
                         display:none;
                     }
@@ -172,5 +172,33 @@ if (current_user_can('shop_manager')) {
 }
 add_action('admin_head-post.php', 'hide_publishing_actions');
 add_action('admin_head-post-new.php', 'hide_publishing_actions');
+
+	add_filter('user_can_richedit','remove_user_can_richedit');
+	
+	function remove_user_can_richedit($c){
+		global $post_type;
+		
+		if('product' == $post_type){
+			return false;	
+		}
+		
+		return $c;
+	}
+
+	function custom_imageupload($content){
+		remove_meta_box('postimagediv','product','side');
+		add_meta_box('postimagediv',__('Add Images'), 'post_thumbnail_meta_box','product','normal','low');
+	}
+	add_action('do_meta_boxes','custom_imageupload');
+
+	function custom_admin_post_thumbnail_html( $content ) {
+		return $content = str_replace( __( 'Set featured image' ), __( 'Upload Files' ), $content );
+	}
+	add_filter( 'admin_post_thumbnail_html', 'custom_admin_post_thumbnail_html' );
+	
+	add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
+	function add_featured_image_instruction( $content ) {
+		return $content .= '<p>Having images of your product make it more enticing. Best size to upload: 450x450 pixels.</p>';
 }
- ?>
+}
+?>
