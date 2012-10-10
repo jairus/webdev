@@ -141,8 +141,36 @@ if (current_user_can('shop_manager')) {
 	}
 	
 	function remove_meta_boxes() {  
-    remove_meta_box('postcustom','product','normal');  
+    remove_meta_box('postcustom','product','normal'); 
+	remove_meta_box( 'slugdiv', 'product', 'normal' ); 
 	}  
 	add_action('admin_init','remove_meta_boxes');
+	
+	function hide_publishing_actions(){
+        $my_post_type = 'product';
+        global $post;
+        if($post->post_type == $my_post_type){
+            echo '
+                <style type="text/css">
+                    #minor-publishing,#delete-action,#misc-publishing-actions, #woothemes-settings, #postexcerpt
+                  	{
+                        display:none;
+                    }
+					#publishing-action
+					{
+						float:left;	
+					}
+					#publishing-action img{
+						float:right;
+						margin-top: 5px;
+						border: 1px solid red;
+					}
+					
+                </style>
+            ';
+        }
+}
+add_action('admin_head-post.php', 'hide_publishing_actions');
+add_action('admin_head-post-new.php', 'hide_publishing_actions');
 }
  ?>
