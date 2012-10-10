@@ -131,7 +131,6 @@ if (current_user_can('shop_manager')) {
 	
 	//remove color picker for the admin scheme
 	remove_action("admin_color_scheme_picker", "admin_color_scheme_picker");
-	
 	//renaming woocommerce title
 	add_filter('gettext','change_post_to_article');
 	add_filter('ngettext','change_post_to_article');
@@ -140,5 +139,10 @@ if (current_user_can('shop_manager')) {
 		$translated = str_ireplace('WooCommerce', 'Shop', $translated);
 		return $translated;	
 	}
+	
+	function remove_meta_boxes() {  
+    remove_meta_box('postcustom','product','normal');  
+	}  
+	add_action('admin_init','remove_meta_boxes');
 }
  ?>

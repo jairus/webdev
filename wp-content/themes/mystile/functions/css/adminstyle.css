@@ -74,7 +74,7 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 
 /*dashboard icon*/
 .icon32.icon-dashboard, #icon-index {background-position: -4px -5px; }
-
+.icon32 .icon32-woocommerce-reports{background-position: -4px -5px; }
 /*profile icon*/
 .icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit{background-position: -1002px -5px; }
 
