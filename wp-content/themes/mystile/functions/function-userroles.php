@@ -143,7 +143,7 @@ if (current_user_can('shop_manager')) {
 	function remove_meta_boxes() {  
     remove_meta_box('postcustom','product','normal'); 
 	remove_meta_box('slugdiv', 'product', 'normal');
-	remove_meta_box('tagsdiv-product_tag', 'product', 'normal'); 
+	remove_meta_box('tagsdiv-product_tag', 'product', 'normal');
 	}  
 	add_action('admin_init','remove_meta_boxes');
 	
@@ -161,31 +161,37 @@ if (current_user_can('shop_manager')) {
 					{
 						float:left;	
 					}
-					#publishing-action img{
+					#publishing-action img
+					{
 						float:right;
 						margin-top: 5px;
 						border: 1px solid red;
 					}
-					.quicktags-toolbar, .wp_themeSkin tr.mceFirst td.mceToolbar, h3 handle .widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{
+					.quicktags-toolbar, .wp_themeSkin tr.mceFirst td.mceToolbar, h3 handle .widget .widget-top, .postbox h3, .stuffbox h3, 
+					.widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, 
+					h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle
+					{
 						background: -moz-linear-gradient(center top , #FAFAFA 0%, #E9E9E9 100%) !important;
-						background: -webkit-gradient(linear, center top, from(#FAFAFA), to(#E9E9E9)) !important;
+						background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#E9E9E9)) !important;
 					}
 					.widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox
 					{
 						border-color:#D5D5D5!important;
 					}
-					.widget .widget-top, .postbox h3, .stuffbox h3{
+					.widget .widget-top, .postbox h3, .stuffbox h3
+					{
 						color:#555555!important;
 						text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5)!important;
 					}
-					.meta-box-sortables .postbox:hover .handlediv{
+					.meta-box-sortables .postbox:hover .handlediv
+					{
 						background:none !important;	
 					}
-					.postbox .hndle{
+					.postbox .hndle
+					{
 						 cursor:default !important;
 					}
-                </style>
-            ';
+                </style>';
         }
 }
 add_action('admin_head-post.php', 'hide_publishing_actions');
@@ -211,6 +217,12 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 	}
 	add_filter('tiny_mce_before_init', 'change_mce_options');
 
+	function customsub($post){
+		remove_meta_box('submitdiv', 'product', 'normal');
+		add_meta_box('submitdiv',__('Publish'), 'post_submit_meta_box','product','normal','low');
+	}
+	add_action('do_meta_boxes','customsub');
+	
 	function custom_imageupload($content){
 		remove_meta_box('postimagediv','product','side');
 		add_meta_box('postimagediv',__('Add Images'), 'post_thumbnail_meta_box','product','normal','low');
@@ -223,8 +235,9 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 	add_filter( 'admin_post_thumbnail_html', 'custom_admin_post_thumbnail_html' );
 	
 	function add_featured_image_instruction( $content ) {
-		return $content .= '<p>Having images of your product make it more enticing. Best size to upload: 450x450 pixels.</p>';
+		return $content .= '<p>Upload your product images here. You can upload multiple images.</p>';
 	}
 	add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
+	
 }
 ?>
