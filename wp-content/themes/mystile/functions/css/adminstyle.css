@@ -111,3 +111,7 @@ h3 handle
 /*monthly sales widget link */
 #dashboard-widgets h3 a{ text-decoration:none; color:#FFF; text-shadow:0 1px 0 #333; }
 #dashboard-widgets h3 a:hover{text-decoration:underline;}
+
+.mce_woothemes_shortcodes_button, .mce_woocommerce_shortcodes_button{
+display:none;	
+}

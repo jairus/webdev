@@ -142,7 +142,8 @@ if (current_user_can('shop_manager')) {
 	
 	function remove_meta_boxes() {  
     remove_meta_box('postcustom','product','normal'); 
-	remove_meta_box( 'slugdiv', 'product', 'normal' ); 
+	remove_meta_box('slugdiv', 'product', 'normal');
+	remove_meta_box('tagsdiv-product_tag', 'product', 'normal'); 
 	}  
 	add_action('admin_init','remove_meta_boxes');
 	
@@ -152,7 +153,7 @@ if (current_user_can('shop_manager')) {
         if($post->post_type == $my_post_type){
             echo '
                 <style type="text/css">
-                    #delete-action,#misc-publishing-actions, #woothemes-settings, #postexcerpt, #ed_toolbar, #wp-content-editor-tools
+                    #delete-action,#misc-publishing-actions,#woothemes-settings, #postexcerpt, #ed_toolbar, #wp-content-editor-tools
                   	{
                         display:none;
                     }
@@ -165,7 +166,24 @@ if (current_user_can('shop_manager')) {
 						margin-top: 5px;
 						border: 1px solid red;
 					}
-					
+					.quicktags-toolbar, .wp_themeSkin tr.mceFirst td.mceToolbar, h3 handle .widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{
+						background: -moz-linear-gradient(center top , #FAFAFA 0%, #E9E9E9 100%) !important;
+						background: -webkit-gradient(linear, center top, from(#FAFAFA), to(#E9E9E9)) !important;
+					}
+					.widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox
+					{
+						border-color:#D5D5D5!important;
+					}
+					.widget .widget-top, .postbox h3, .stuffbox h3{
+						color:#555555!important;
+						text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5)!important;
+					}
+					.meta-box-sortables .postbox:hover .handlediv{
+						background:none !important;	
+					}
+					.postbox .hndle{
+						 cursor:default !important;
+					}
                 </style>
             ';
         }
@@ -173,7 +191,7 @@ if (current_user_can('shop_manager')) {
 add_action('admin_head-post.php', 'hide_publishing_actions');
 add_action('admin_head-post-new.php', 'hide_publishing_actions');
 
-	add_filter('user_can_richedit','remove_user_can_richedit');
+	/*add_filter('user_can_richedit','remove_user_can_richedit');
 	
 	function remove_user_can_richedit($c){
 		global $post_type;
@@ -183,7 +201,15 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 		}
 		
 		return $c;
+	}*/
+	
+	//test
+	
+	function change_mce_options($init) {
+	$init['theme_advanced_disable'] = 'numlist,blockquote,justifyright,pasteword,pastetext,woocommerce_shortcodes_button,woothemes_shortcodes_button';
+	return $init;
 	}
+	add_filter('tiny_mce_before_init', 'change_mce_options');
 
 	function custom_imageupload($content){
 		remove_meta_box('postimagediv','product','side');
@@ -192,13 +218,13 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 	add_action('do_meta_boxes','custom_imageupload');
 
 	function custom_admin_post_thumbnail_html( $content ) {
-		return $content = str_replace( __( 'Set featured image' ), __( 'Upload Files' ), $content );
+		return $content = str_replace( __( 'Set featured image' ), __( 'Upload Images' ), $content );
 	}
 	add_filter( 'admin_post_thumbnail_html', 'custom_admin_post_thumbnail_html' );
 	
-	add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
 	function add_featured_image_instruction( $content ) {
 		return $content .= '<p>Having images of your product make it more enticing. Best size to upload: 450x450 pixels.</p>';
-}
+	}
+	add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
 }
 ?>
