@@ -90,10 +90,10 @@ div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidg
 #adminmenu #menu-add-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-add-product:hover div.wp-menu-image{background-position: -520px -24px; }
 #menu-log-out .wp-menu-image {background-position: -653px 3px; }
 #adminmenu #menu-log-out.wp-menu-open div.wp-menu-image, #adminmenu #menu-log-out:hover div.wp-menu-image{background-position: -653px -24px; }
-#icon-woocommerce, .woocommerce_icon, .icon32-posts-product, .icon32-posts-shop_order, .icon32-posts-shop_coupon, .icon32-posts-product_variation{ background:url(../images/zurpay-ico.png); }
-
-h3 handle
-.widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{ background-image:-moz-linear-gradient(center top , #ff901a, #fdb428); background-image:-webkit-gradient(linear, left top, left bottom, from(#ff901a), to(#fdb428)); /*background:#fdb428;*/}
+#icon-woocommerce, .woocommerce_icon, .icon32-posts-product, .icon32-posts-shop_order, .icon32-posts-shop_coupon, .icon32-posts-product_variation{ background:url(../images/zurpay-ico.png) !important; background-position: -65px -5px !important;  }
+.icon32-woocommerce-reports{background-position: -67px -5px  !important;}
+.icon32-posts-product{ background-position: -295px -5px  !important; }
+h3 handle .widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{ background-image:-moz-linear-gradient(center top , #ff901a, #fdb428); background-image:-webkit-gradient(linear, left top, left bottom, from(#ff901a), to(#fdb428)); /*background:#fdb428;*/}
 
 /*h3 text shadow */
 .widget .widget-top, .postbox h3, .stuffbox h3 { color: #FFF; text-shadow:0 1px 0 #000; }
@@ -113,3 +113,5 @@ h3 handle
 #dashboard-widgets h3 a:hover{text-decoration:underline;}
 
 .mce_woothemes_shortcodes_button, .mce_woocommerce_shortcodes_button{display:none;}
+#publishing-action {position:relative;}
+#publish{ margin:auto; position:absolute; top:-37px; left:100px}

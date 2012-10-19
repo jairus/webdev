@@ -192,10 +192,10 @@ if (current_user_can('shop_manager')) {
 						 cursor:default !important;
 					}
                 </style>';
-        }
-}
-add_action('admin_head-post.php', 'hide_publishing_actions');
-add_action('admin_head-post-new.php', 'hide_publishing_actions');
+			}
+	}
+	add_action('admin_head-post.php', 'hide_publishing_actions');
+	add_action('admin_head-post-new.php', 'hide_publishing_actions');
 
 	/*add_filter('user_can_richedit','remove_user_can_richedit');
 	
@@ -209,7 +209,6 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 		return $c;
 	}*/
 	
-	//test
 	
 	function change_mce_options($init) {
 	$init['theme_advanced_disable'] = 'numlist,blockquote,justifyright,pasteword,pastetext,woocommerce_shortcodes_button,woothemes_shortcodes_button';
@@ -239,5 +238,23 @@ add_action('admin_head-post-new.php', 'hide_publishing_actions');
 	}
 	add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
 	
+	/*remove personal options*/
+	if ( ! function_exists( 'cor_remove_personal_options' ) ) {
+		//visual editor, keyboard shortcuts, toolbar
+	  function cor_remove_personal_options( $subject ) {
+		$subject = preg_replace( '#<h3>Personal Options</h3>.+?/table>#s', '', $subject, 1 );
+		return $subject;
+	  }
+	
+	  function cor_profile_subject_start() {
+		ob_start( 'cor_remove_personal_options' );
+	  }
+	
+	  function cor_profile_subject_end() {
+		ob_end_flush();
+	  }
+	}
+	add_action( 'admin_head-profile.php', 'cor_profile_subject_start' );
+	add_action( 'admin_footer-profile.php', 'cor_profile_subject_end' );
 }
 ?>
