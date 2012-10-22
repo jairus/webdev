@@ -1,6 +1,13 @@
 <?php 
 	 //add new page
-
+	function mod_wp_admin_init(){
+		if (strpos(strtolower($_SERVER['REQUEST_URI']),'/wp-admin/') !== false) {
+			/*if ( !is_site_admin() ) {
+				
+			}*/
+			wp_redirect( get_option('siteurl'), 302 );
+		}
+	}
 	if (isset($_GET['activated']) && is_admin()){
 		$new_page_title = 'Manager Login';
 		$new_page_content = '[loginform]';
