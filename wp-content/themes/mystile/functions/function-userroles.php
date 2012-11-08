@@ -1,13 +1,13 @@
 <?php 
-	 //add new page
+	//redirect customer to homepage. preventing them to access the wp-admin 
 	function mod_wp_admin_init(){
-		if (strpos(strtolower($_SERVER['REQUEST_URI']),'/wp-admin/') !== false) {
-			/*if ( !is_site_admin() ) {
-				
-			}*/
-			wp_redirect( get_option('siteurl'), 302 );
+		if(is_admin() && !current_user_can('administrator')){
+			wp_redirect(home_url());
+			exit;
 		}
 	}
+	
+	//add new page
 	if (isset($_GET['activated']) && is_admin()){
 		$new_page_title = 'Manager Login';
 		$new_page_content = '[loginform]';
@@ -35,7 +35,7 @@
 		function add_new_user_account(){
 			$username = 'shopmanager2';
 			$password = 'shopmanager';
-			$email = 'rev_gutierrez@yahoo.com';
+			$email = 'info@nmgresources.ph';
 			
 			if(!username_exists($username) && !email_exists($email)){
 				$user_id = wp_create_user($username, $password, $email);
@@ -74,7 +74,8 @@ if (current_user_can('shop_manager')) {
 	add_action('admin_menu', 'new_prod_menu');
 
 	//Remove unecessary user roles
-	$role = get_role('shop_manager');	
+	$role = get_role('shop_manager');
+	$role->add_cap('switch_themes'); //add new role switch theme capabilities
 	$role->remove_cap('edit_others_pages');
 	$role->remove_cap('edit_others_posts');
 	$role->remove_cap('delete_others_pages');
@@ -104,6 +105,14 @@ if (current_user_can('shop_manager')) {
 	}
 	//Hook into admin menu
 	add_action('admin_menu', 'remove_submenus');
+	
+	
+	//add appearance (aka theme switcher) to admin panel
+	add_action( 'admin_menu' , 'admin_menu_new_items' );
+	function admin_menu_new_items() {
+		global $submenu;
+		$submenu['profile.php'][500] = array( 'Themes', 'manage_woocommerce' , 'themes.php' );
+	}
 	
 	//Remove unecessary Dashboard Widgets
 	function example_remove_dashboard_widgets() {

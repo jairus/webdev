@@ -26,6 +26,8 @@
  * @package WordPress
  * @subpackage User
  */
+ 
+
 class WP_Roles {
 	/**
 	 * List of roles and capabilities.

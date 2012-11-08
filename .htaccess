@@ -7,7 +7,6 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /devshopgit/webdev/index.php [L]
-RewriteRule ^login$ /devshopgit/webdev/wp-login.php [NC,L]
 </IfModule>
 
 # END WordPress
