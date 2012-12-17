@@ -17,6 +17,8 @@
  */
 define( 'WPINC', 'wp-includes' );
 
+//increase wp memory limit for shop
+define('WP_MEMORY_LIMIT', '64M');
 // Include files required for initialization.
 require( ABSPATH . WPINC . '/load.php' );
 require( ABSPATH . WPINC . '/default-constants.php' );

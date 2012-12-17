@@ -198,18 +198,50 @@
 			var parent = $( this ).parent();
 			var name = parent.find( '.woo-typography-size-px' ).attr( 'name' );
 			if( name == '' ) { var name = parent.find( '.woo-typography-size-em' ).attr( 'name' ); }
-		
+			
 			if( val == 'px' ) {
+				var name = parent.find( '.woo-typography-size-em' ).attr( 'name' );
 				parent.find( '.woo-typography-size-em' ).hide().removeAttr( 'name' );
 				parent.find( '.woo-typography-size-px' ).show().attr( 'name', name );
 			}
 			else if( val == 'em' ) {
-				parent.find( '.woo-typography-size-em' ).show().attr( 'name', name );
+				var name = parent.find( '.woo-typography-size-px' ).attr( 'name' );
 				parent.find( '.woo-typography-size-px' ).hide().removeAttr( 'name' );
+				parent.find( '.woo-typography-size-em' ).show().attr( 'name', name );
 			}
 		
 		});
  	}, // End setup_custom_typography()
+
+/**
+ * setup_custom_ui_slider()
+ *
+ * @since 5.3.5
+ */
+ 
+ 	setup_custom_ui_slider: function () {
+
+		$('div.ui-slide').each(function(i){
+
+			if( $(this).attr('min') != undefined && $(this).attr('max') != undefined ) {
+
+				$(this).slider( { 
+								min: parseInt($(this).attr('min')), 
+								max: parseInt($(this).attr('max')), 
+								value: parseInt($(this).next("input").val()),
+								step: parseInt($(this).attr('inc')) ,
+								slide: function( event, ui ) {
+									$( this ).next("input").val(ui.value);
+								}
+							});
+
+				$(this).removeAttr('min').removeAttr('max').removeAttr('inc');
+
+			}
+
+		});
+
+ 	}, // End setup_custom_ui_slider()
 
 /**
  * init_flyout_menus()
@@ -257,6 +289,25 @@
  	}, // End init_flyout_menus()
 
 /**
+ * banner_advert_close()
+ *
+ * @since 5.3.4
+ */
+
+	banner_advert_close: function () {
+		$( '.wooframework-banner' ).each( function ( i ) {
+			if ( $( this ).find( '.close-banner a' ).length ) {
+				$( this ).find( '.close-banner a' ).click( function ( e ) {
+					var answer = confirm( 'Are you sure you\'d like to close this banner?' + "\n" + 'Before closing this banner, make sure you have saved your theme options.' );
+					if ( answer ) {} else {
+						return false;
+					}
+				});
+			}
+		});
+	},  // End banner_advert_close()
+
+/**
  * unhide_hidden()
  *
  * @since 4.8.0
@@ -295,7 +346,9 @@
 		woothemesAdminInterface.toggle_nav_menus();
 		woothemesAdminInterface.init_flyout_menus();
 		woothemesAdminInterface.open_first_menu();
+		woothemesAdminInterface.banner_advert_close();
 		woothemesAdminInterface.setup_custom_typography();
+		woothemesAdminInterface.setup_custom_ui_slider();
 	
 	});
   
