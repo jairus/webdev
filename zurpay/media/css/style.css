@@ -1,0 +1,149 @@
+*{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;	
+}
+
+.center{
+	text-align:center;	
+}
+
+.bold{
+	font-weight: bold;	
+}
+
+.font18, .font18 p{
+	font-size:18px;	
+}
+
+.font22 p{
+	font-size: 22px;	
+}
+
+input[type="password"], input[type="text"], textarea{
+	border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    padding: 4px;
+    width: 220px;	
+}
+
+
+input[type="submit"], input[type="button"] {
+    cursor: pointer;
+    min-width: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+	
+}
+
+body{
+	background-color: #F0F0F0;
+    color: black;
+    font: 13px/20px normal Helvetica,Arial,sans-serif;
+    margin: 0 30px 30px;
+}
+
+#header{
+	background: #f2f424;
+    padding: 5px;
+}
+
+#menu{
+	background: none repeat scroll 0 0 #939598;
+    color: white;
+    height: 34px;
+    padding: 0;	
+}
+
+#content{
+	padding: 10px;
+}
+
+#mom247-container{
+	background: none repeat scroll 0 0 white;
+    border: 1px solid #E5E5E5;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 4px 18px #C8C8C8;
+    margin: 10px;
+}
+
+#save_button{
+    width: 100%;
+}
+
+.even{
+	 background: none repeat scroll 0 0 #f2f424;	
+}
+
+.odd{
+	 background: none repeat scroll 0 0 #EEEEEE;	
+}
+
+.list{
+	background: none repeat scroll 0 0 white;
+    margin: 10px;	
+}
+
+.list td{
+	border: 1px solid #D0D0D0;
+    padding: 5px;	
+}
+
+.list table{
+	border-collapse: collapse;
+    border-radius: 5px 5px 5px 5px;
+    width: 100%;	
+}
+
+.list th{
+	background: none repeat scroll 0 0 #666666;
+    border: 1px solid #D0D0D0;
+    color: white;
+    padding: 5px;	
+}
+
+.list-td{
+	border: 1px solid #D0D0D0;
+    padding: 5px;	
+}
+
+#login-text{
+	color:#000;	
+}
+	#login-text:hover{
+		color:#069;
+	}
+
+#delete-text{
+	color:#F00;	
+}
+
+	#delete-text:hover{
+		color:#900;	
+	}
+#new-site-link{
+	color: #000;
+	text-transform:uppercase;	
+}
+
+.footer{
+	border-top: 1px solid #D0D0D0;
+    font-size: 11px;
+    line-height: 32px;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+	height: 190px;	
+}
+	.footer img{
+		margin-top: 11em;	
+	}
+	
+td{
+	vertical-align:top;	
+}
+
+.right{
+	text-align:right;	
+}

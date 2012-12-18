@@ -10,7 +10,7 @@ border-bottom: 1px solid #000000; }
 .wp-first-item current menu-top menu-top-first menu-icon-dashboard menu-top-first menu-top-last menu-top-last{float:left;}
 #adminmenu .wp-submenu ul {background:none; padding: 0;}
 #adminmenu li.wp-menu-open {border: none;} 
-#adminmenu .wp-submenu-wrap, #adminmenu .wp-submenu ul{ position:relative; float:left;  background:#FFFFFF;/*background:none; border: 1px solid red;*/}
+#adminmenu .wp-submenu-wrap, #adminmenu .wp-submenu ul{ position:relative; float:left;  background:#FFFFFF; width: 140px;/*background:none; border: 1px solid red;*/}
 #adminmenu .wp-submenu li{ height: 20px; padding-top: 5px; padding-bottom: 5px; text-align:left; float:left; display:block;}
 #adminmenu .wp-submenu li a{ height: 20px; display:block; width: 122px;}
 #adminmenu div.wp-menu-image{ margin-left: 55px; }
@@ -26,7 +26,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .wp-submenu .wp-submenu-head{float:left;}
 .wp-menu-arrow{ display:none; }
 #footer{background: -moz-linear-gradient(center top , #414141, #323232) repeat-x scroll 0 0 #3A3A3A; background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#323232)) repeat-x scroll 0 0 #3A3A3A;}
-/*#footer-upgrade{background:#592222}*/
+#footer-upgrade{display:none;}
 #collapse-menu{display:none;}
 #wpbody{ position:static;}
 #wpbody-content{ float: left; margin-left: 25px; margin-right: 20px; width: 97%; }
@@ -136,3 +136,4 @@ background: -moz-linear-gradient(center top , #FF901A 0%, #FDB428 100%) !importa
 
 /*update navigation*/
 #update-nag, .update-nag { display:none; }
+.alignleft{ text-align:center; float:none !important;}
