@@ -4,7 +4,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#3
 border-bottom: 1px solid #000000; }
 #adminmenushadow{display:none;}
 #adminmenu li.wp-has-current-submenu .wp-menu-arrow, #adminmenu li.menu-top:hover .wp-menu-arrow, #adminmenu li.current .wp-menu-arrow, #adminmenu li.focused .wp-menu-arrow, #adminmenu li.menu-top.wp-has-submenu:hover .wp-menu-arrow div, #adminmenu .wp-menu-arrow div{display:none;}
-#adminmenuback, #adminmenuwrap, #adminmenu, .folded #adminmenu{width: 99.99%; height: 65px; float:left;}
+#adminmenuback, #adminmenuwrap,#adminmenu, .folded #adminmenu{width: 99.98%; height: 65px; float:left;}
 #adminmenuwrap ul li{ /*border: 1px solid red;*/ width: 130px; height: 60px; float:left; margin: 5px 5px 0 5px; text-align:center;}
 .wp-menu-separator{display:none;}
 .wp-first-item current menu-top menu-top-first menu-icon-dashboard menu-top-first menu-top-last menu-top-last{float:left;}
@@ -31,6 +31,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #wpbody{ position:static;}
 #wpbody-content{ float: left; margin-left: 25px; margin-right: 20px; width: 97%; }
 /*.wrap{margin: 54px 0 0 0;}*/
+#wpcontent{background:#FFF;}
 #wpcontent, #footer{ width: 99.99%; margin: 0; }
 .folded #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, .no-js #adminmenu .wp-has-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu li.focused .wp-submenu{display: none;}
 #wpadminbar{display:none;}
