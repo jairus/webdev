@@ -93,8 +93,6 @@ License: ZSMP
 			$menu[100] = array('Log Out','read', $logouturl ,'','menu-top', 'menu-log-out', 'div');
 		}
 		add_action('admin_menu', 'new_prod_menu');
-	
-	
 		
 		add_action('pre_user_query','site_pre_user_query');
 		function site_pre_user_query($user_search) {
@@ -187,7 +185,7 @@ License: ZSMP
 		  
 		  
 		  $restricted = array(__('Links'), __('Comments'), __('Media'),
-		  __('Plugins'), __('Tools'), __('Settings'), __('Pages'), __('Posts'),__('Slides'),__('woothemes'));
+		  __('Plugins'), __('Tools'), __('Settings'), __('Pages'), __('Posts'), __('Slides'));
 		  end ($menu);
 		  while (prev($menu)){
 			$value = explode(' ',$menu[key($menu)][0]);
@@ -198,13 +196,6 @@ License: ZSMP
 		//Hook into admin menu
 		add_action('admin_menu', 'remove_submenus');
 		
-		
-		//add appearance (aka theme switcher) to admin panel
-		/*add_action( 'admin_menu' , 'admin_menu_new_items' );
-		function admin_menu_new_items() {
-			global $submenu;
-			$submenu['profile.php'][500] = array( 'Themes', 'manage_woocommerce' , 'themes.php' );
-		}*/
 		
 		//Remove unecessary Dashboard Widgets
 		function example_remove_dashboard_widgets() {
@@ -379,11 +370,19 @@ License: ZSMP
         'index.php', //dashboard
         'post-new.php?post_type=product', 
         'edit.php?post_type=shop_order',
-        'edit.php?post_type=product'
+        'edit.php?post_type=product',
+		'admin.php?page=woothemes'
 		);
 	   }
 	   add_filter('custom_menu_order', 'custom_menu_order');
 	   add_filter('menu_order', 'custom_menu_order');
+	   
+	   function my_custom_submenu() {
+			add_submenu_page('themes.php','Slides', 'Slides', 'read', 'edit.php?post_type=slide', '', '');
+			add_theme_page('Theme Options','Theme Options', 'read', 'woothemes', 'admin', '');
+		}
+		add_action('admin_menu', 'my_custom_submenu');
+		
 		
 	}
 	
