@@ -139,4 +139,4 @@ background: -moz-linear-gradient(center top , #FF901A 0%, #FDB428 100%) !importa
 #update-nag, .update-nag { display:none; }
 .alignleft{padding: 0 0 0 25px;}
 #adminmenu .wp-menu-image img{ float: left; opacity: 1; padding: 3px 0 0 1px;}
-/*#toplevel_page_woothemes{display:none;}*/
+#toplevel_page_woothemes{display:none;}
