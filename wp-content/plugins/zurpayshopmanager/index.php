@@ -178,9 +178,6 @@ License: ZSMP
 		function remove_submenus() {
 		  global $submenu;
 		  global $menu;
-		 // unset($menu['edit.php?post_type=slide']);
-		  //unset($submenu['users.php'][5]); //All Users
-		  //unset($submenu['users.php'][10]); //Add Users
 		  unset($submenu['index.php'][10]); // Updates
 		  
 		  
@@ -297,19 +294,6 @@ License: ZSMP
 		}
 		add_action('admin_head-post.php', 'hide_publishing_actions');
 		add_action('admin_head-post-new.php', 'hide_publishing_actions');
-	
-		/*add_filter('user_can_richedit','remove_user_can_richedit');
-		
-		function remove_user_can_richedit($c){
-			global $post_type;
-			
-			if('product' == $post_type){
-				return false;	
-			}
-			
-			return $c;
-		}*/
-		
 		
 		function change_mce_options($init) {
 		$init['theme_advanced_disable'] = 'numlist,blockquote,justifyright,pasteword,pastetext,woocommerce_shortcodes_button,woothemes_shortcodes_button';
@@ -358,22 +342,16 @@ License: ZSMP
 		add_action( 'admin_head-profile.php', 'cor_profile_subject_start' );
 		add_action( 'admin_footer-profile.php', 'cor_profile_subject_end' );
 		
-		/*automatically switch to Emporium Theme by Default 
-		
-		define('WP_DEFAULT_THEME', 'emporium');*/
-		
-		//re-order admin menu
-		
 		function custom_menu_order($menu_ord) {
-       if (!$menu_ord) return true;
-       return array(
-        'index.php', //dashboard
-        'post-new.php?post_type=product', 
-        'edit.php?post_type=shop_order',
-        'edit.php?post_type=product',
-		'admin.php?page=woothemes'
-		);
-	   }
+		   if (!$menu_ord) return true;
+		   return array(
+			'index.php', //dashboard
+			'post-new.php?post_type=product', 
+			'edit.php?post_type=shop_order',
+			'edit.php?post_type=product',
+			'admin.php?page=woothemes'
+			);
+		   }
 	   add_filter('custom_menu_order', 'custom_menu_order');
 	   add_filter('menu_order', 'custom_menu_order');
 	   
