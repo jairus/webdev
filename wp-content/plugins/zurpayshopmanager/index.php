@@ -356,8 +356,8 @@ License: ZSMP
 	   add_filter('menu_order', 'custom_menu_order');
 	   
 	   function my_custom_submenu() {
-			add_submenu_page('themes.php','Slides', 'Slides', 'read', 'edit.php?post_type=slide', '', '');
 			add_theme_page('Theme Options','Theme Options', 'read', 'woothemes', 'admin', '');
+			add_theme_page('Slides', 'Slides', 'read', 'edit.php?post_type=slide', '', '');
 		}
 		add_action('admin_menu', 'my_custom_submenu');
 		
