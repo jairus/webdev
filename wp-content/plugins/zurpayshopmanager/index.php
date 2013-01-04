@@ -1,5 +1,5 @@
 <?php
-ob_start();
+//ob_start();
 /*
 Plugin Name: Zurpay Shop Manager Panel
 Plugin URI: 
@@ -14,7 +14,7 @@ License: ZSMP
 <?php 
 	require_once(ABSPATH . 'wp-includes/pluggable.php');
 	require_once(ABSPATH . 'wp-includes/plugin.php');
-	//require_once(ABSPATH . 'wp-config.php');
+
 	//redirect customer to homepage. preventing them to access the wp-admin 
 		function mod_wp_admin_init(){
 			if(is_admin() && !current_user_can('administrator')){
@@ -232,7 +232,7 @@ License: ZSMP
 		add_filter('ngettext','change_post_to_article');
 		
 		function change_post_to_article($translated){
-			$translated = str_ireplace('WooCommerce', 'Shop', $translated);
+			//$translated = str_ireplace('WooCommerce', 'Shop', $translated);
 			$translated = str_ireplace('Appearance', 'Store Appearance', $translated);
 			return $translated;	
 		}
