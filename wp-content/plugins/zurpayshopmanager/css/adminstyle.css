@@ -4,17 +4,19 @@ background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#3
 border-bottom: 1px solid #000000; }
 #adminmenushadow{display:none;}
 #adminmenu li.wp-has-current-submenu .wp-menu-arrow, #adminmenu li.menu-top:hover .wp-menu-arrow, #adminmenu li.current .wp-menu-arrow, #adminmenu li.focused .wp-menu-arrow, #adminmenu li.menu-top.wp-has-submenu:hover .wp-menu-arrow div, #adminmenu .wp-menu-arrow div{display:none;}
-#adminmenuback, #adminmenuwrap,#adminmenu, .folded #adminmenu{width: 99.98%; height: 65px; float:left;}
-#adminmenuwrap ul li{ /*border: 1px solid red;*/ width: 130px; height: 60px; float:left; margin: 5px 5px 0 5px; text-align:center;}
+#adminmenuback, #adminmenuwrap,#adminmenu, .folded #adminmenu{width: 99.98%; height:10%; padding: 0 0 5px 0; float:left;}
+#adminmenuwrap ul li{ /*border: 1px solid red; width: 130px; height: 60px;*/ float:left; margin: 15px 35px 0 35px; text-align:center;}
 .wp-menu-separator{display:none;}
 .wp-first-item current menu-top menu-top-first menu-icon-dashboard menu-top-first menu-top-last menu-top-last{float:left;}
 #adminmenu .wp-submenu ul {background:none; padding: 0;}
 #adminmenu li.wp-menu-open {border: none;} 
 #adminmenu .wp-submenu-wrap, #adminmenu .wp-submenu ul{ position:relative; float:left;  background:#FFFFFF; width: 140px;/*background:none; border: 1px solid red;*/}
 #adminmenu .wp-submenu li{ height: 20px; padding-top: 5px; padding-bottom: 5px; text-align:left; float:left; display:block;}
-#adminmenu .wp-submenu li a{ height: 20px; display:block; width: 122px;}
-#adminmenu div.wp-menu-image{ margin-left: 55px; }
+#adminmenu .wp-submenu li a{ height: 20px; display:block; width: 118px;}
+#adminmenu div.wp-menu-image{margin-left: 0.055em; }
+#adminmenu a.menu-top{ text-align:left; min-width:0; margin: 0 2px;}
 #adminmenu a.menu-top {border:none;}
+#adminmenu .wp-has-current-submenu .wp-submenu{ position:absolute; top: 26px; left: -17px;}
 #adminmenu li.menu-top:hover > a, #adminmenu li.menu-top.focused > a, #adminmenu li.menu-top > a:focus {background:none; text-shadow:none;}
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {background:none;}
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {color:#FF9900;}
@@ -22,7 +24,7 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #adminmenu a:hover, #adminmenu li.menu-top > a:focus, #adminmenu ul.wp-submenu a:hover, #the-comment-list .comment a:hover, #rightnow a:hover, #media-upload a.del-link:hover, div.dashboard-widget-submit input:hover, .subsubsub a:hover, .subsubsub a.current:hover, .ui-tabs-nav a:hover, .plugins .inactive a:hover, #all-plugins-table .plugins .inactive a:hover, #search-plugins-table .plugins .inactive a:hover { color:#888888; }
 #contextual-help-link-wrap,#screen-meta-links .screen-meta-toggle, #screen-meta-links a.show-settings { display: none !important; }
 /*.no-js #adminmenu .wp-has-current-submenu:hover .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu{ width: 400px; }*/
-#adminmenu li .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu{ overflow:visible; position:relative; left:20px;}
+#adminmenu li .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu{ overflow:visible; position:absolute; top: 26px; left:4px;}
 #adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .wp-submenu .wp-submenu-head{float:left;}
 .wp-menu-arrow{ display:none; }
 #footer{background: -moz-linear-gradient(center top , #414141, #323232) repeat-x scroll 0 0 #3A3A3A; background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#323232)) repeat-x scroll 0 0 #3A3A3A;}
@@ -37,11 +39,11 @@ a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.de
 #wpadminbar{display:none;}
 html.wp-toolbar{padding-top:0px !important;}  
 #adminmenu .wp-has-current-submenu .wp-submenu-wrap{ box-shadow:2px 2px 5px rgba(0, 0, 0, 0.4); left:20px;}
-#adminmenu #menu-posts-product div.wp-menu-image, #adminmenu #menu-posts-shop_order div.wp-menu-image, #adminmenu #menu-posts-shop_coupon 
 
 /*for zurpay icons*/
-div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{background: url(../images/zurpay-icons.png) no-repeat;} 
 
+#adminmenu #menu-posts-product div.wp-menu-image, #adminmenu #menu-posts-shop_order div.wp-menu-image, #adminmenu #menu-posts-shop_coupon 
+div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{background: url(../images/zurpay-icons.png) no-repeat;} 
 #adminmenu #toplevel_page_woocommerce div.wp-menu-image{background-position: -43px 2px;}
 /*for wordpress icon*/
 .icon16.icon-dashboard, .menu-icon-dashboard div.wp-menu-image, .icon16.icon-post, .menu-icon-post div.wp-menu-image, .icon16.icon-media, .menu-icon-media div.wp-menu-image, .icon16.icon-links, .menu-icon-links div.wp-menu-image, .icon16.icon-page, .menu-icon-page div.wp-menu-image, .icon16.icon-comments, .menu-icon-comments div.wp-menu-image, .icon16.icon-appearance, .menu-icon-appearance div.wp-menu-image, .icon16.icon-plugins, .menu-icon-plugins div.wp-menu-image, .icon16.icon-users, .menu-icon-users div.wp-menu-image, .icon16.icon-tools, .menu-icon-tools div.wp-menu-image, .icon16.icon-settings, .menu-icon-settings div.wp-menu-image, .icon16.icon-site, .menu-icon-site div.wp-menu-image{background:url(../images/zurpay-icons.png) no-repeat;}
@@ -50,32 +52,32 @@ div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image{backg
 #adminmenu #toplevel_page_woocommerce.wp-menu-open div.wp-menu-image, #adminmenu #toplevel_page_woocommerce:hover div.wp-menu-image { background-position: -43px -25px;}
 
 /*product inactive*/
-#adminmenu #menu-posts-product div.wp-menu-image{background-position: -218px 3px;}
+#adminmenu #menu-posts-product div.wp-menu-image{background-position: -217px 2px;}
 
 /*product active*/
-#adminmenu #menu-posts-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-posts-product:hover div.wp-menu-image{ background-position: -218px -24px; }
+#adminmenu #menu-posts-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-posts-product:hover div.wp-menu-image{ background-position: -217px -25px; }
 
 /*dashboard inactive*/
-.icon16.icon-dashboard, #adminmenu .menu-icon-dashboard div.wp-menu-image{background-position: 0px 3px; }
+.icon16.icon-dashboard, #adminmenu .menu-icon-dashboard div.wp-menu-image{background-position: 1px 2px; }
 
 /*dashboard active*/
-#adminmenu .menu-icon-dashboard:hover div.wp-menu-image, #adminmenu .menu-icon-dashboard.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-dashboard.current div.wp-menu-image{ background-position: 0px -24px }
+#adminmenu .menu-icon-dashboard:hover div.wp-menu-image, #adminmenu .menu-icon-dashboard.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-dashboard.current div.wp-menu-image{ background-position: 1px -25px }
 
 /*profile inactive*/
-.icon16.icon-users, #adminmenu .menu-icon-users div.wp-menu-image{background-position: -608px 3px;}
+.icon16.icon-users, #adminmenu .menu-icon-users div.wp-menu-image{background-position: -607px 2px;}
 
 /*profile active */
 
-#adminmenu .menu-icon-users:hover div.wp-menu-image, #adminmenu .menu-icon-users.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-users.current div.wp-menu-image {background-position: -608px -24px; }
+#adminmenu .menu-icon-users:hover div.wp-menu-image, #adminmenu .menu-icon-users.wp-has-current-submenu div.wp-menu-image, #adminmenu .menu-icon-users.current div.wp-menu-image {background-position: -607px -25px; }
 
 /*appearance inactive */
 
-.icon16.icon-appearance, #adminmenu .menu-icon-appearance div.wp-menu-image{ background-position: -85px 3px;}
+.icon16.icon-appearance, #adminmenu .menu-icon-appearance div.wp-menu-image{ background-position: -86px 2px;}
 
 /*appearance active */
 
 #adminmenu .menu-icon-appearance:hover div.wp-menu-image, #adminmenu .menu-icon-appearance.wp-has-current-submenu div.wp-menu-image, #adminmenu 
-.menu-icon-appearance.current div.wp-menu-image{ background-position: -85px -24px; }
+.menu-icon-appearance.current div.wp-menu-image{ background-position: -86px -25px; }
 
 /*wp x2 icon */
 .icon32{float: left; height: 38px; margin: 7px 8px 0 2px; width: 40px;}
@@ -96,14 +98,14 @@ div.sidebar-name h3, #menu-management .nav-tab, #dashboard_plugins h5, a.rsswidg
 
 /*custom icon for the custom admin panel link*/
 .wp-menu-image{background:url(../images/zurpay-icons.png) no-repeat;}
-#menu-add-product .wp-menu-image{ background-position: -520px 3px; }
-#adminmenu #menu-add-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-add-product:hover div.wp-menu-image{background-position: -520px -24px; }
-#menu-log-out .wp-menu-image {background-position: -653px 3px; }
-#adminmenu #menu-log-out.wp-menu-open div.wp-menu-image, #adminmenu #menu-log-out:hover div.wp-menu-image{background-position: -653px -24px; }
+#menu-add-product .wp-menu-image{ background-position: -521px 2px; }
+#adminmenu #menu-add-product.wp-menu-open div.wp-menu-image, #adminmenu #menu-add-product:hover div.wp-menu-image{background-position: -521px -25px; }
+#menu-log-out .wp-menu-image {background-position: -651px 2px; }
+#adminmenu #menu-log-out.wp-menu-open div.wp-menu-image, #adminmenu #menu-log-out:hover div.wp-menu-image{background-position: -651px -25px; }
 #icon-woocommerce, .woocommerce_icon, .icon32-posts-product, .icon32-posts-shop_order, .icon32-posts-shop_coupon, .icon32-posts-product_variation{ background:url(../images/zurpay-ico.png) !important; background-position: -65px -5px !important;  }
 .icon32-woocommerce-reports{background-position: -67px -5px  !important;}
 .icon32-posts-product{ background-position: -295px -5px  !important; }
-
+.icon32-posts-slide{ background-position: -575px -5px  !important; }
 h3 handle .widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle{ background-image:-moz-linear-gradient(center top , #ff901a, #fdb428); background-image:-webkit-gradient(linear, left top, left bottom, from(#ff901a), to(#fdb428)); /*background:#fdb428;*/}
 
 /*h3 text shadow */

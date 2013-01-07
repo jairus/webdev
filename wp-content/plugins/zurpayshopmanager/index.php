@@ -15,6 +15,7 @@ License: ZSMP
 	require_once(ABSPATH . 'wp-includes/pluggable.php');
 	require_once(ABSPATH . 'wp-includes/plugin.php');
 
+
 	//redirect customer to homepage. preventing them to access the wp-admin 
 		function mod_wp_admin_init(){
 			if(is_admin() && !current_user_can('administrator')){
@@ -173,13 +174,15 @@ License: ZSMP
 		
 		$the_user_caps = new Rev_User_Caps();
 		
-		
 		//Remove Sub-Menu items
 		function remove_submenus() {
 		  global $submenu;
 		  global $menu;
-		  unset($submenu['index.php'][10]); // Updates
+
+		  $menu['55.5'][0] = 'Shop';
+		  $menu['60'][0] = 'Store Appearance';
 		  
+		  unset($submenu['index.php'][10]); // Updates
 		  
 		  $restricted = array(__('Links'), __('Comments'), __('Media'),
 		  __('Plugins'), __('Tools'), __('Settings'), __('Pages'), __('Posts'), __('Slides'));
@@ -203,6 +206,9 @@ License: ZSMP
 			remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 			remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal');
 			remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal');
+			wp_add_dashboard_widget( 'woocommerce_dashboard_right_now', __( 'Shop Right Now', 'woocommerce' ), 'woocommerce_dashboard_widget_right_now' );
+            wp_add_dashboard_widget('woocommerce_dashboard_recent_orders', __('Shop Recent Orders', 'woocommerce'), 'woocommerce_dashboard_recent_orders');
+            wp_add_dashboard_widget('woocommerce_dashboard_recent_reviews', __('Shop Recent Reviews', 'woocommerce'), 'woocommerce_dashboard_recent_reviews');
 		} 
 	
 		// Hook into the 'wp_dashboard_setup' action to register our function
@@ -227,16 +233,7 @@ License: ZSMP
 		
 		//remove color picker for the admin scheme
 		remove_action("admin_color_scheme_picker", "admin_color_scheme_picker");
-		//renaming woocommerce title
-		add_filter('gettext','change_post_to_article');
-		add_filter('ngettext','change_post_to_article');
-		
-		function change_post_to_article($translated){
-			//$translated = str_ireplace('WooCommerce', 'Shop', $translated);
-			$translated = str_ireplace('Appearance', 'Store Appearance', $translated);
-			return $translated;	
-		}
-		
+			
 		function remove_meta_boxes() {  
 		remove_meta_box('postcustom','product','normal'); 
 		remove_meta_box('slugdiv', 'product', 'normal');
@@ -356,13 +353,16 @@ License: ZSMP
 	   add_filter('menu_order', 'custom_menu_order');
 	   
 	   function my_custom_submenu() {
+		   if(function_exists ('woo_option_setup')){
 			add_theme_page('Theme Options','Theme Options', 'read', 'woothemes', 'admin', '');
+		   }
+			if (post_type_exists('slide')) {
 			add_theme_page('Slides', 'Slides', 'read', 'edit.php?post_type=slide', '', '');
+			}
 		}
 		add_action('admin_menu', 'my_custom_submenu');
 		
 		
 	}
-	
 	
 ?>
