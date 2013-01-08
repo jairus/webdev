@@ -25,6 +25,16 @@
          <div class="row-fluid">
             <div class="span12" >
             	<h1>Featured Products</h1>
+                <div class="featured-product-container">
+                <?php
+					$args = array( 'post_type' => 'product', 'posts_per_page' => 12 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+							
+					<?php woocommerce_get_template_part( 'content', 'product' ); ?>
+						
+				<?php endwhile; ?>
+    			</div>
             </div>
          	
          </div>

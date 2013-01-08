@@ -1,5 +1,5 @@
 <?php
-
+define('WOOCOMMERCE_USE_CSS', false);
 //sidebars 
 $args = array();
 $args['name']="Side Bar";

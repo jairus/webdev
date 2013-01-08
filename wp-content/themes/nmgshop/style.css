@@ -55,3 +55,13 @@ background-image: url('/twitter-bootstrap/images/gridbg.gif');
 font-size: 18px;
 color:#FF9900;
 }
+
+.featured-product-container .product{
+	float:left;
+	list-style-type:none;	
+}
+
+.featured-product-container .product img{
+	width: 150px;
+	height: 150px;	
+}
