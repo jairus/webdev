@@ -9,11 +9,6 @@
           </a>
           <a class="brand" href="#"><img src="<?php bloginfo("template_url"); ?>/images/zurpay.png" width="111" height="30" alt="zurpay logo" /></a>
           <div class="nav-collapse">
-           <!-- <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>-->
              <?php include_once (dirname(__FILE__)."/ext/mainmenus.php") ?>
             <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
           </div><!--/.nav-collapse -->

@@ -26,15 +26,34 @@
             <div class="span12" >
             	<h1>Featured Products</h1>
                 <div class="featured-product-container">
-                <?php
-					$args = array( 'post_type' => 'product', 'posts_per_page' => 12 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-							
-					<?php woocommerce_get_template_part( 'content', 'product' ); ?>
+                	<ul class="products">
+                	<?php
+						$args = array( 'post_type' => 'product', 'posts_per_page' => 12 );
+						$loop = new WP_Query( $args );
 						
-				<?php endwhile; ?>
-    			</div>
+						while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+						
+                        	<li class="product">	
+				
+				<a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+				
+					<?php //woocommerce_show_product_sale_flash( $post, $_product ); //shows the "Sale!" alert on product?>
+					
+					<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.$woocommerce->plugin_url().'/assets/images/placeholder.png" alt="Placeholder" width="'.$woocommerce->get_image_size('shop_catalog_image_width').'px" height="'.$woocommerce->get_image_size('shop_catalog_image_height').'px" />'; ?>
+									
+					<h3><?php the_title(); ?></h3>
+					
+					<span class="price"><?php echo $product->get_price_html(); ?></span>					
+				
+				</a>
+				
+				<?php //woocommerce_template_loop_add_to_cart( $loop->post, $_product ); //add to cart button?>
+				
+			</li>
+						
+						<?php endwhile; ?>
+                    </ul>
+                </div>
             </div>
          	
          </div>

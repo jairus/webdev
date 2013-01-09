@@ -8,8 +8,6 @@ Author URI: www.nmgresources.ph
 Tags:
 */
 
-@import url('/twitter-bootstrap-v2/docs/assets/css/bootstrap-responsive.css');
-@import url('/twitter-bootstrap-v2/docs/assets/css/bootstrap.css');
  body {
        /* padding-top: 60px;*/
         padding-bottom: 40px;
@@ -56,12 +54,53 @@ font-size: 18px;
 color:#FF9900;
 }
 
-.featured-product-container .product{
-	float:left;
-	list-style-type:none;	
+img{ max-width: 100%; -ms-interpolation-mode: bicubic;}
+
+ul.products{
+	list-style: none outside none;
+    margin-left: 0 !important;	
 }
 
-.featured-product-container .product img{
-	width: 150px;
-	height: 150px;	
+ul.products:after{
+	clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;	
+}
+
+.products a{ 
+	color: #4A413E;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.products a:hover{
+	color:#F90;
+}
+
+ul.products li.product.first{
+	 clear: both;
+}
+
+ul.products li.product{
+	float: left;
+    margin-bottom: 1.618em;
+    margin-right: 3.8%;
+    position: relative;
+    text-align: center;
+    width: 23.0769%;	
+}
+
+ul.products li.product img{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E4E3;
+    display: block;
+    height: auto;
+    margin: 0 auto 1em;
+    padding: 0.53em;
+    width: 100%;	
 }
