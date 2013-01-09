@@ -69,14 +69,27 @@ ul.products:after{
     overflow: hidden;	
 }
 
+.featured-product-container{
+	margin: 50px 0;	
+}
+
 .products a{ 
 	color: #4A413E;
     font-weight: bold;
     text-decoration: none;
 }
 
+.products h3{
+	font-size:1.387em;
+}
+
 .products a:hover{
 	color:#F90;
+	border-color:#F60;
+}
+
+.products a:hover .onsale{
+	display:block;
 }
 
 ul.products li.product.first{
@@ -86,7 +99,7 @@ ul.products li.product.first{
 ul.products li.product{
 	float: left;
     margin-bottom: 1.618em;
-    margin-right: 3.8%;
+    /*margin-right: 3.8%;*/
     position: relative;
     text-align: center;
     width: 23.0769%;	
@@ -104,3 +117,81 @@ ul.products li.product img{
     padding: 0.53em;
     width: 100%;	
 }
+
+.onsale{
+	font-size:16px;
+	position:absolute;
+	left:0;
+	padding:5px 0 0 0;
+	height: 10%;
+	width: 100%;
+	color: #fff;
+	background:#069;
+	box-shadow:#333;
+	display:none;
+}
+
+.price{
+	color:#4A413E;	
+}
+
+.price del{
+	color:#C52C37;	
+}
+
+.price ins{
+	color:#069;	
+}
+
+/* footer widget css*/
+
+.product_list_widget{
+	list-style:none outside none;	
+}
+
+.footer-widget-1 ul{
+	list-style:none outside none;
+	margin: 10px 0 0 0;	
+}
+
+.footer-widget-1 h2{
+	font-size: 17.5px;
+	margin: 0;
+	color:#F93;
+}
+
+.footer-widget-1 ul.product_list_widget li a{
+	display:block;	
+}
+
+.footer-widget-1 ul.product_list_widget li img{
+	background-clip: padding-box;
+    /*border-radius: 100% 100% 100% 100%;*/
+    float: right;
+    height: auto;
+    margin-left: 1em;
+    width: 3.244em;
+}
+
+.footer-widget-1 ul.product_list_widget li:after{
+	clear:both;
+	content: " ";
+	display: block;
+	height: 0;
+	overflow: hidden;	
+}
+
+.footer-widget-1 ul.product_list_widget li{
+	border-bottom: 1px solid #E8E4E3;
+	margin-bottom: 0.618em;
+    padding-bottom: 0.618em;	
+}
+
+.submitbutton{
+	background-color: #5BB75B;
+    background-image: linear-gradient(to bottom, #62C462, #51A351);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}	

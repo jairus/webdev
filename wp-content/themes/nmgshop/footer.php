@@ -1,8 +1,48 @@
-	        <hr>
+<div class="row-fluid">
+            <div class="span12" >
+            <div class="span3">
+                <div class="footer-widget-1">
+				   <?php  
+                    if(is_active_sidebar("footer-widget-1")){
+                
+                    dynamic_sidebar("footer-widget-1");} ?>
+                </div>	
+            </div><!--/span-->
+            
+            <div class="span3">
+              <div class="footer-widget-1">
+				   <?php  
+                    if(is_active_sidebar("footer-widget-2")){
+                
+                    dynamic_sidebar("footer-widget-2");} ?>
+                </div>	
+            </div><!--/span-->
+            <div class="span3">
+               <div class="footer-widget-1">
+				   <?php  
+                    if(is_active_sidebar("footer-widget-3")){
+                
+                    dynamic_sidebar("footer-widget-3");} ?>
+                </div>	
+            </div><!--/span-->
+            <div class="span3">
+              <div class="footer-widget-1">
+				   <?php  
+                    if(is_active_sidebar("footer-widget-4")){
+                
+                    dynamic_sidebar("footer-widget-4");} ?>
+                </div>	
+            </div><!--/span-->
+             </div><!--/span-->
+            
+          </div><!--/row-->
+          <div class="span11">
+  		   <hr>
      <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Zurpay 2012</p>
       </footer>
-	
+     </div>
+	</div><!--/.fluid-container-->     
     <!-- Le Script : To load the site faster-->
 	<script src="<?php echo get_bloginfo('template_directory')?>/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
     <script src="<?php echo get_bloginfo('template_directory')?>/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>

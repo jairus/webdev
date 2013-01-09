@@ -882,6 +882,11 @@
   .modal.fade.in {
     top: 20px;
   }
+  
+  ul.products li.product{
+	width: 45%;  
+	margin-right: 4.0%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -933,6 +938,9 @@
   }
   .carousel-caption {
     position: static;
+  }
+  ul.products li.product{
+	width: 40%;  
   }
 }
 

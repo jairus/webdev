@@ -27,8 +27,9 @@ update_option( 'woocommerce_catalog_image_crop', 0 );
  
 }
 
-
+//Remove Woocommerce default css
 define('WOOCOMMERCE_USE_CSS', false);
+
 //sidebars 
 $args = array();
 $args['name']="Side Bar";
@@ -38,7 +39,7 @@ $args['before_widget']="";
 $args['after_widget']="";
 register_sidebar($args);
 
-/*menu*/
+//menu
 $args = array();
 $args['name']="Menu Bar";
 $args['id']="menu-bar";
@@ -47,26 +48,51 @@ $args['before_widget']="";
 $args['after_widget']="";
 register_sidebar($args);
 
+/* Footer Widgets */
+
+$args = array();
+$args['name']="Footer Widget 1";
+$args['id']="footer-widget-1";
+$args['description']="Footer Widget 1";
+$args['before_widget']="";
+$args['after_widget']="";
+register_sidebar($args);
+
+$args = array();
+$args['name']="Footer Widget 2";
+$args['id']="footer-widget-2";
+$args['description']="Footer Widget 2";
+$args['before_widget']="";
+$args['after_widget']="";
+register_sidebar($args);
+
+$args = array();
+$args['name']="Footer Widget 3";
+$args['id']="footer-widget-3";
+$args['description']="Footer Widget 3";
+$args['before_widget']="";
+$args['after_widget']="";
+register_sidebar($args);
+
+$args = array();
+$args['name']="Footer Widget 4";
+$args['id']="footer-widget-4";
+$args['description']="Footer Widget 4";
+$args['before_widget']="";
+$args['after_widget']="";
+register_sidebar($args);
 
 /**adding featured thumbnail for the theme post and custom post typess**/
 add_theme_support( 'post-thumbnails', array('post','product') ); 
-
-/**
-function custom_excerpt_length( $length ) {
-	return 25;
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-**/
 
 function new_excerpt_more($more) {
 	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more'); 
 
-//wp_enqueue_script( 'cufon', get_bloginfo('template_directory').'/assets/cufonjs/cufon-yui.js', array( 'jquery' ) );
 
+/* Registering Theme Menu Support */
 add_action( 'init', 'register_my_menus' );
-
 function register_my_menus() {
 	register_nav_menus(
 		array(
@@ -82,8 +108,8 @@ function my_wp_nav_menu_args( $args = '' )
 	$args['container'] = false;
 	return $args;
 } // function
-
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
 /*
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);*/
