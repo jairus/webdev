@@ -8,6 +8,16 @@ Author URI: www.nmgresources.ph
 Tags:
 */
 
+@media (max-width: 480px) {
+	body{ padding-left: 5px !important; padding-right: 5px !important;}
+	h2{ font-size: 22.5px }
+	.leaderboard{ padding: 20px !important; }
+	.leaderboard h1{ font-size: 35px !important; }
+	.btn-large{ padding: 6px; font-size: 18px; }
+	.featured-product-container{ margin: 10px 0 !important;}
+	.products h3{ font-size: 1em !important;}
+}
+
  body {
        /* padding-top: 60px;*/
         padding-bottom: 40px;
@@ -22,7 +32,7 @@ Tags:
 	  .leaderboard {
   padding: 60px;
   margin-bottom: 30px;
-  background-image: url('/twitter-bootstrap/images/gridbg.gif');
+  background-image: url('twitter-bootstrap-v2/images/gridbg.gif');
   background-repeat:repeat;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -42,11 +52,15 @@ Tags:
 }
 
 .well {
-background-image: url('/twitter-bootstrap/images/gridbg.gif');
+background-image: url('twitter-bootstrap-v2/images/gridbg.gif');
   background-repeat:repeat;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+}
+
+.pull-right{
+	padding-top: 5px;	
 }
 
 .nav .nav-header {
@@ -99,10 +113,10 @@ ul.products li.product.first{
 ul.products li.product{
 	float: left;
     margin-bottom: 1.618em;
-    /*margin-right: 3.8%;*/
+    margin-right: 3.8%;
     position: relative;
     text-align: center;
-    width: 23.0769%;	
+    width: 48%;	
 }
 
 ul.products li.product img{
@@ -166,7 +180,7 @@ ul.products li.product img{
 
 .footer-widget-1 ul.product_list_widget li img{
 	background-clip: padding-box;
-    /*border-radius: 100% 100% 100% 100%;*/
+    border-radius: 100% 100% 100% 100%;
     float: right;
     height: auto;
     margin-left: 1em;
