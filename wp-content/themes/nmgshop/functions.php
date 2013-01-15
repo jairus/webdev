@@ -2,7 +2,6 @@
 /*-----------------------------------------------------------------------------------*/
 /* Hook in on activation */
 /*-----------------------------------------------------------------------------------*/
- 
 global $pagenow;
 if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) add_action('init', 'yourtheme_woocommerce_image_dimensions', 1);
  
@@ -112,24 +111,10 @@ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 /*
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);*/
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
 function remove_add_to_cart_buttons() {
     remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-}
-
-add_action( 'wp_enqueue_scripts', 'frontend_scripts_include_lightbox' );
-
-function frontend_scripts_include_lightbox() {
-  global $woocommerce;
-  
-  $suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-  $lightbox_en = get_option( 'woocommerce_enable_lightbox' ) == 'yes' ? true : false;
-  
-  if ( $lightbox_en ) {
-    wp_enqueue_script( 'fancybox', $woocommerce->plugin_url() . '/assets/js/fancybox/fancybox' . $suffix . '.js', array( 'jquery' ), '1.6', true );
-    wp_enqueue_style( 'woocommerce_fancybox_styles', $woocommerce->plugin_url() . '/assets/css/fancybox.css' );
-  }
-}
+}*/
 ?>
