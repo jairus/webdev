@@ -119,10 +119,6 @@ ul.products li.product{
     width: 22.05%;	
 }
 
-ul.products li.product:nth-child(2n) {
-    margin-right: 0;
-}
-
 
 ul.products li.product img{
 	-moz-box-sizing:border-box;

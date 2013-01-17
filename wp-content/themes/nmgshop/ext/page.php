@@ -14,8 +14,9 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
+		<div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span12">
 
 			<?php
 			/* Run the loop to output the page.
@@ -27,6 +28,5 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
+	</div>
 <?php get_footer(); ?>

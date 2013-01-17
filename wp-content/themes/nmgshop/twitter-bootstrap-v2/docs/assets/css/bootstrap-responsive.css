@@ -7,6 +7,260 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ 
+@media only screen and (min-width: 768px){
+  ul.products li.product:nth-child(2n) {
+    margin-right: 3.8%;
+  }	
+  
+  ul.products li.product.last {
+    margin-right: 0;
+  }	
+  
+    /* 1. GLOBAL DROPDOWN STYLES (these are purely for the dropdown layout and you should only edit the width of the dropdowns) */
+  ul.nav {
+    position: relative;
+    margin-bottom: 0;
+    /* LEVEL 2 */
+  
+    /* LEVEL 3 */
+  
+  }
+  ul.nav li {
+    position: relative;
+    float: left;
+    zoom: 1;
+    list-style: none;
+  }
+  ul.nav li a {
+    display: block;
+    padding: .53em 1em;
+  }
+  ul.nav ul {
+    width: 15.379em;
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    margin: 0;
+  }
+  ul.nav ul li {
+    float: none;
+  }
+  ul.nav ul li a {
+    width: 100%;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+  
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+  
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+  
+  }
+  ul.nav ul ul {
+    left: 100%;
+    top: 0;
+  }
+  ul.nav li:hover > ul {
+    visibility: visible;
+    display: block;
+  }
+  /* 2. TOP NAVIGATION (Add top navigation presentational styles here) */
+  #top {
+    background: #f7f7f7;
+    margin: 0 -3.631em;
+    padding: 0 3.631em;
+  }
+  #top #top-nav {
+    display: block;
+  }
+  #top ul.nav {
+    font-size: .857em;
+    /* LEVEL 2 */
+  
+    /* LEVEL 3 */
+  
+  }
+  #top ul.nav > li a {
+    padding: 1.387em 1em;
+    color: #9f9693;
+  }
+  #top ul.nav > li a:hover {
+    background: #f7f7f7;
+    text-decoration: none;
+    color: #6c6360;
+  }
+  #top ul.nav > li:hover {
+    background: #f7f7f7;
+  }
+  #top ul.nav ul {
+    background: #f7f7f7;
+  }
+  #top ul.nav ul li a {
+    padding: .53em 1em;
+  }
+  #top .wc-nav {
+    width: auto;
+    float: right;
+  }
+  #top .wc-nav li.checkout {
+    display: inline-block;
+  }
+  #top .wc-nav li.checkout a:before {
+    font-family: 'WebSymbolsRegular';
+    display: inline-block;
+    font-size: .857em;
+    margin-right: .618em;
+    content: ")";
+    font-weight: normal;
+  }
+  #top .wc-nav li.search {
+    width: auto;
+  }
+  #top .wc-nav li.search form {
+    margin-bottom: 0;
+    padding-top: 1.1em;
+  }
+  #top .wc-nav li.search label {
+    display: none;
+  }
+  #top .wc-nav li.search .button {
+    position: absolute;
+    top: 0;
+    left: -999em;
+  }
+  #top .wc-nav li.search:hover {
+    background: none;
+  }
+  #top .wc-nav li.cart {
+    width: auto;
+    text-align: right;
+  }
+  #top .wc-nav li.cart a {
+    padding-top: 1.387em;
+    padding-left: 1em;
+  }
+  /* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) */
+  #header #navigation {
+    display: block !important;
+    margin-top: .382em;
+  }
+  #header #navigation ul.nav {
+    float: right;
+    /* LEVEL 2 */
+  
+    /* LEVEL 3 */
+  
+  }
+  #header #navigation ul.nav > li a {
+    border: 1px solid #fcfcfc;
+    background: #fcfcfc;
+    font-weight: bold;
+    position: relative;
+    -webkit-border-radius: 0.236em;
+    border-radius: 0.236em;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  #header #navigation ul.nav > li a:hover {
+    border-color: #e8e4e3;
+    background: #fff;
+  }
+  #header #navigation ul.nav > li:hover a {
+    border-color: #e8e4e3;
+    background: #fff;
+  }
+  #header #navigation ul.nav > li.current-menu-item > a,
+  #header #navigation ul.nav > li.current_page_item > a {
+    color: #ff4800;
+  }
+  #header #navigation ul.nav > li.parent a {
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  #header #navigation ul.nav > li.parent a:after {
+    font-family: 'WebSymbolsRegular';
+    display: inline-block;
+    font-size: .857em;
+    margin-left: .618em;
+    content: ";";
+    color: #e3dad7;
+    font-weight: normal;
+  }
+  #header #navigation ul.nav > li.parent a:hover:before {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 99999;
+  }
+  #header #navigation ul.nav > li.parent:hover a:before {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 99999;
+  }
+  #header #navigation ul.nav > li.parent:hover a:after {
+    color: #ff4800;
+  }
+  #header #navigation ul.nav > li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent a:after {
+    visibility: visible;
+    content: "]";
+    float: right;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li.parent a:after {
+    visibility: visible;
+    content: "]";
+  }
+  #header #navigation ul.nav > li.parent ul li.parent ul li.parent ul li a:after {
+    visibility: hidden;
+  }
+  #header #navigation ul.nav ul {
+    border: 1px solid #e8e4e3;
+    margin-top: -1px;
+    padding: .372em 0;
+    box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
+    -webkit-box-shadow: 0 0.202em 0 0 rgba(232, 228, 227, 0.4);
+    background: #fff;
+  }
+  #header #navigation ul.nav ul li a {
+    border: 0;
+    background: #fff;
+  }
+  #header #navigation ul.nav ul ul {
+    left: 100%;
+    top: -0.372em;
+  }
+  h3.nav-toggle {
+    display: none;
+  }
+}
 
 @-ms-viewport {
   width: device-width;
@@ -1082,6 +1336,11 @@
   ul.products li.product{
 	width: 48% !important;  
   }
+  
+  ul.products li.product:nth-child(2n) {
+    margin-right: 0;
+}
+
 }
 
 @media (max-width: 979px) {
