@@ -114,10 +114,15 @@ ul.products li.product{
 	float: left;
     margin-bottom: 1.618em;
     margin-right: 3.8%;
-    position: relative;
+	position: relative;
     text-align: center;
-    width: 48%;	
+    width: 22.05%;	
 }
+
+ul.products li.product:nth-child(2n) {
+    margin-right: 0;
+}
+
 
 ul.products li.product img{
 	-moz-box-sizing:border-box;
@@ -129,7 +134,7 @@ ul.products li.product img{
     height: auto;
     margin: 0 auto 1em;
     padding: 0.53em;
-    width: 100%;	
+   /* width: 100%;*/	
 }
 
 .onsale{
