@@ -139,5 +139,4 @@ if ( empty( $woocommerce_loop['columns'] ) )
                 </div>
             </div>
          </div>
-         <hr />
          <?php get_footer(); ?>

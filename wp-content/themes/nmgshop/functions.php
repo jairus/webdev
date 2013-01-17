@@ -109,13 +109,11 @@ function my_wp_nav_menu_args( $args = '' )
 } // function
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
 function remove_add_to_cart_buttons() {
     remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 }
+
 
 ?>

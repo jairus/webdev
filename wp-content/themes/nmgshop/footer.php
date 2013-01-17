@@ -1,3 +1,4 @@
+<hr />
 <div class="row-fluid">
             <div class="span12" >
             <?php  
@@ -41,6 +42,7 @@
       </footer>
      </div>
 	</div><!--/.fluid-container-->     
+    <?php wp_footer() ?>
     <!-- Le Script : To load the site faster-->
 	<!--<script src="<?php echo get_bloginfo('template_directory')?>/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>-->
     <script src="<?php echo get_bloginfo('template_directory')?>/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>

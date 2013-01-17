@@ -51,7 +51,7 @@ get_header('shop'); ?>
             <?php if ( have_posts() ) : ?>
     
                 <?php do_action('woocommerce_before_shop_loop'); ?>
-    
+    <div class="span8">
                 <ul class="products">
     
                     <?php woocommerce_product_subcategories(); ?>
@@ -63,7 +63,7 @@ get_header('shop'); ?>
                     <?php endwhile; // end of the loop. ?>
     
                 </ul>
-    
+   	 
                 <?php do_action('woocommerce_after_shop_loop'); ?>
     
             <?php else : ?>
@@ -96,17 +96,23 @@ get_header('shop'); ?>
              */
             do_action('woocommerce_after_main_content');
         ?>
-    
+    	</div>
         <?php
             /**
              * woocommerce_sidebar hook
              *
              * @hooked woocommerce_get_sidebar - 10
              */
-            do_action('woocommerce_sidebar');
-        ?>
+            if(is_active_sidebar("side-bar")){ ?>
+                <div class="span3">
+                  <div class="product-sidebar">
+                       <?php dynamic_sidebar("side-bar"); ?>
+                  </div>	
+                </div><!--/span--> 
+			<?php } ?>
     
-    <?php get_footer('shop'); ?>
-	</div>
-    </div>
+    
+			</div>
+    	</div>
+		<?php get_footer('shop'); ?>
     </div>

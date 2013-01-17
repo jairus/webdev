@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#"><img src="<?php bloginfo("template_url"); ?>/images/zurpay.png" width="111" height="30" alt="zurpay logo" /></a>
+          <a class="brand" href="<?php bloginfo("url") ?>"><img src="<?php bloginfo("template_url"); ?>/images/zurpay.png" width="111" height="30" alt="zurpay logo" /></a>
           <div class="nav-collapse">
              <?php include_once (dirname(__FILE__)."/ext/mainmenus.php") ?>
             <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
