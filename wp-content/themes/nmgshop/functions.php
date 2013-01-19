@@ -81,6 +81,23 @@ $args['before_widget']="";
 $args['after_widget']="";
 register_sidebar($args);
 
+/* enqueueing bootstrap js */
+function bootstrap_scripts_method() {
+wp_enqueue_script('bootstrap-transition',get_template_directory_uri().'/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-alert',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-alert.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-modal',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-modal.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-dropdown',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-scrollspy',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-scrollspy.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-tab',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-tab.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-tooltip',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-tooltip.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-popover',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-popover.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-button',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-button.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-collapse',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-collapse.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-carousel',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js',array('jquery'), '2.0.1', true);
+wp_enqueue_script('bootstrap-typeahead',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-typeahead.js',array('jquery'), '2.0.1', true);
+}
+add_action('wp_enqueue_scripts', 'bootstrap_scripts_method');
+
 /**adding featured thumbnail for the theme post and custom post typess**/
 add_theme_support( 'post-thumbnails', array('post','product') ); 
 

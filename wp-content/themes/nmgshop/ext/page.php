@@ -14,7 +14,6 @@
 
 get_header();			global $woo_options;
 ?>
-
 		<div class="container-fluid">
           <div class="row-fluid">
             <div class="span12">
@@ -56,7 +55,5 @@ get_header();			global $woo_options;
         <?php } // End IF Statement ?>  
         
 		</section><!-- /#main -->
-			</div><!-- #content -->
-		</div><!-- #container -->
-	</div>
+			</div>
 <?php get_footer(); ?>
