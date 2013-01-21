@@ -44,8 +44,11 @@
           <a class="brand" href="<?php bloginfo("url") ?>"><img src="<?php bloginfo("template_url"); ?>/images/zurpay.png" width="111" height="30" alt="zurpay logo" /></a>
           <div class="nav-collapse">
              <?php include_once (dirname(__FILE__)."/ext/mainmenus.php") ?>
-            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+            <form class="navbar-search pull-right">
+            	<input type="text" method="<?php bloginfo('url') ?>/" class="search-query" placeholder="Search">
+            </form>
+          </div><!--.nav-collapse -->
+        </div><!-- container fluid -->
+      </div> <!-- navbar-inner-->
+    </div><!-- navbar -->
+    

@@ -1,3 +1,12 @@
 <?php
- wp_nav_menu( array( 'theme_location' => 'menu-top', 'items_wrap' => '<ul class="nav">%3$s</ul>' ) );
+				
+				$args = array(
+					'theme_location' => 'menu-top',
+					'depth'		 => 2,
+					'container'	 => false,
+					'menu_class'	 => 'nav',
+					'walker'	 => new Bootstrap_Walker_Nav_Menu()
+				);
+ 
+				wp_nav_menu($args);
 ?>

@@ -68,7 +68,27 @@ font-size: 18px;
 color:#FF9900;
 }
 
-  
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;    
+}
+
+a.menu:after, .dropdown-toggle:after {
+  content: none;
+}
+
+#breadcrumb{
+	border-bottom: 1px solid #EEEEEE;
+	padding-bottom: 5px;
+}
+
+.product{
+		
+}
+
+.single-product .images{
+	float:left;
+	width: 28%;	
+}
 
 
 img{ max-width: 100%; -ms-interpolation-mode: bicubic;}

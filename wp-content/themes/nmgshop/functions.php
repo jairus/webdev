@@ -132,5 +132,6 @@ function remove_add_to_cart_buttons() {
     remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 }
 
-
+//Add walker function for twitter bootstrap wp-menu
+require_once(ABSPATH  . '/wp-content/themes/nmgshop/scripts/walker.php');
 ?>
