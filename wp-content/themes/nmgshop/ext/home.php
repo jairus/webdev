@@ -8,8 +8,6 @@ if ( empty( $woocommerce_loop['loop'] ) )
 // Store column count for displaying the grid
 if ( empty( $woocommerce_loop['columns'] ) )
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-
-
 ?>
 <div class="container-fluid">
       <div class="row-fluid">
@@ -27,11 +25,10 @@ if ( empty( $woocommerce_loop['columns'] ) )
             </div>
            </ul>
           </div><!--/.navbar --><?php */?>
-
           <div class="leaderboard">
             <h1>NMG Theme</h1>
             <p>Welcome to Zurpay!</p>
-            <p><a class="btn btn-success btn-large">Start Shopping!</a></p>
+            <p><a class="btn btn-success btn-large" href="<?php bloginfo('url') ?>/shop">Start Shopping!</a></p>
           </div>
         </div>
         <div class="row-fluid">

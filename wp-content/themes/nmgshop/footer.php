@@ -43,7 +43,7 @@
       </footer>
      </div>
      </div>
-	</div><!--/.fluid-container-->     
+	</div><!--/.fluid-container-->    
     <?php wp_footer() ?>
 	</body>
 </html>

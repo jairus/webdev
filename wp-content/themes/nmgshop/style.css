@@ -8,14 +8,87 @@ Author URI: www.nmgresources.ph
 Tags:
 */
 
-@media (max-width: 480px) {
-	body{ padding-left: 5px !important; padding-right: 5px !important;}
+@media only screen and (max-width: 480px) {
+	body{ padding-left: 5px; padding-right: 5px;}
 	h2{ font-size: 22.5px }
-	.leaderboard{ padding: 20px !important; }
-	.leaderboard h1{ font-size: 35px !important; }
+	.leaderboard{ padding: 20px; }
+	.leaderboard h1{ font-size: 35px; }
 	.btn-large{ padding: 6px; font-size: 18px; }
-	.featured-product-container{ margin: 10px 0 !important;}
-	.products h3{ font-size: 1em !important;}
+	.featured-product-container{ margin: 10px 0;}
+	.products h3{ font-size: 1em;}
+	.single-product .images{ width:100%;}
+	.input-text{ width: 160px; }
+	.nav-collapse.in.collapse{height:100% !important;}
+	.woocommerce_tabs{width: 100%; float:left;}
+	.woocommerce_tabs ul.tabs li, .woocommerce-tabs ul.tabs li{
+		width: 48%;	
+		text-align:center;
+		padding:3px;
+	}
+	.nav-tabs > li > a, .nav-pills > li > a{
+		padding: 8px 0;	
+	}
+	.nav-tabs > li > a{
+		border: 1px solid #C6C2C1;	
+		-webkit-border-radius: 4px 4px 4px 4px;
+     	-moz-border-radius: 4px 4px 4px 4px;
+        border-radius: 4px 4px 4px 4px;
+	}
+	.nav-tabs > .active > a, .nav-tabs > .active > a:hover{
+		border-color:#09F;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 2048px){
+.nav-collapse.in.collapse{
+	height:0;	
+}
+.single-product .images{
+	float:left;
+	width: 45%;	
+	background:#CCC;
+	margin-right: 20px;
+}
+
+.single-product .images a img{
+	border: 1px solid #CCC;	
+}
+
+.single-product .images .thumbnails{
+	background:#fff;
+	padding-top: 2px;
+}
+
+.single-product .images .thumbnails a img{
+	border: 1px solid #CCC;	
+	margin: 2px;
+}
+
+.single-product .images .thumbnails a img:hover, .single-product .images a img:hover{
+	border: 1px solid #09C;	
+}	
+
+.navbar-search, .navbar-search input[type="text"]{width:120px;}	
+.input-text{ width: 160px; }
+
+
+.woocommerce_tabs{
+	width: 100%;
+	float:left;	
+}
+
+}
+
+@media only screen and (min-width: 910px){
+	.navbar-search, .navbar-search input[type="text"]{width:auto;}	
+	#user_login, #user_pass{ width: 90%; }
+	.woocommerce_tabs{margin-top:30px; width: 100%; float:left;	}
+}
+
+@media (width:768px){
+	.navbar-search, .navbar-search input[type="text"]{
+		width:100px;	
+	}
 }
 
  body {
@@ -30,14 +103,14 @@ Tags:
         padding: 9px 0;
       }
 	  .leaderboard {
-  padding: 60px;
-  margin-bottom: 30px;
-  background-image: url('twitter-bootstrap-v2/images/gridbg.gif');
-  background-repeat:repeat;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
+		  padding: 60px;
+		  margin-bottom: 30px;
+		  background-image: url('twitter-bootstrap-v2/img/gridbg.gif');
+		  background-repeat:repeat;
+		  -webkit-border-radius: 6px;
+		  -moz-border-radius: 6px;
+		  border-radius: 6px;
+		}
 .leaderboard h1 {
   font-size: 40px;
   margin-bottom: 5px;
@@ -85,13 +158,8 @@ a.menu:after, .dropdown-toggle:after {
 		
 }
 
-.single-product .images{
-	float:left;
-	width: 28%;	
-}
 
-
-img{ max-width: 100%; -ms-interpolation-mode: bicubic;}
+img{-ms-interpolation-mode: bicubic;}
 
 ul.products{
 	list-style: none outside none;
@@ -318,3 +386,30 @@ ul.products li.product img{
 .ui-slider-horizontal .ui-slider-range-max {
   right: -1px;
 }
+
+
+.single-product .images a img{
+	border: 1px solid #CCC;	
+}
+
+.single-product .images .thumbnails{
+	background:#fff;
+	padding-top: 2px;
+}
+
+.single-product .images .thumbnails a img{
+	border: 1px solid #CCC;	
+}
+
+.single-product .images .thumbnails a img:hover, .single-product .images a img:hover{
+	border: 1px solid #09C;	
+}	
+
+/*Product Sidebar CSS*/
+.single-product-sidebar{ border: 1px solid #CCC; float: left; width: 100%;}
+.single-product-sidebar .widgettitle{ font-size: 16px; text-align:center; padding:2px 0 0 0; line-height:2; background-color:#0088CC; color:#fff; margin:0; width:100%; float:left;}
+.single-product-sidebar ul{ margin:0;} 
+.single-product-sidebar ul li{ border-bottom: 1px solid #CCC; }
+.single-product-sidebar ul li img{width:80px; border: 1px solid #CCC; margin: 2px;}
+.single-product-sidebar ul li img:hover{border-color:#09C;}
+.total, .buttons{text-align:center;}

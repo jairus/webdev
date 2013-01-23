@@ -38,6 +38,15 @@ $args['before_widget']="";
 $args['after_widget']="";
 register_sidebar($args);
 
+//Single Product Side Bar
+$args = array();
+$args['name']="Product Page Side Bar";
+$args['id']="single-product-side-bar";
+$args['description']="Product Page Side Bar";
+$args['before_widget']="";
+$args['after_widget']="";
+register_sidebar($args);
+
 //menu
 $args = array();
 $args['name']="Menu Bar";

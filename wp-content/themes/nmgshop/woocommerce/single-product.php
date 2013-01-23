@@ -12,7 +12,7 @@
 get_header('shop'); ?>
 <div class="container-fluid">
     <div class="row-fluid">
-		<div class="span12">
+		<div class="span9">
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -45,8 +45,17 @@ get_header('shop'); ?>
 		 * @hooked woocommerce_get_sidebar - 10
 		 
 		do_action('woocommerce_sidebar');*/
-	?>
+		
+		 ?>
     	</div>
+        <?php if(is_active_sidebar("single-product-side-bar")){ ?>
+                <div class="span3">
+                  <div class="single-product-sidebar">
+                       <?php dynamic_sidebar("single-product-side-bar"); ?>
+                  </div>	
+                </div><!--/span--> 
+			<?php } ?>
+
     </div>
 <?php get_footer('shop'); ?>
 </div>
