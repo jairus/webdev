@@ -102,7 +102,8 @@ wp_enqueue_script('bootstrap-tooltip',get_template_directory_uri() .'/twitter-bo
 wp_enqueue_script('bootstrap-popover',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-popover.js',array('jquery'), '2.0.1', true);
 wp_enqueue_script('bootstrap-button',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-button.js',array('jquery'), '2.0.1', true);
 wp_enqueue_script('bootstrap-collapse',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-collapse.js',array('jquery'), '2.0.1', true);
-wp_enqueue_script('bootstrap-carousel',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js',array('jquery'), '2.0.1', true);
+if(is_home()){
+wp_enqueue_script('bootstrap-carousel',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js',array('jquery'), '2.0.1', true);}
 wp_enqueue_script('bootstrap-typeahead',get_template_directory_uri() .'/twitter-bootstrap-v2/docs/assets/js/bootstrap-typeahead.js',array('jquery'), '2.0.1', true);
 }
 add_action('wp_enqueue_scripts', 'bootstrap_scripts_method');

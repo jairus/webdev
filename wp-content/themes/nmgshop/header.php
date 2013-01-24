@@ -44,9 +44,10 @@
           <a class="brand" href="<?php bloginfo("url") ?>"><img src="<?php bloginfo("template_url"); ?>/images/zurpay.png" width="111" height="30" alt="zurpay logo" /></a>
           <div class="nav-collapse">
              <?php include_once (dirname(__FILE__)."/ext/mainmenus.php") ?>
-            <form class="navbar-search pull-right" method="get" action="<?php bloginfo('url') ?>/">
-            	<input type="text" class="search-query" placeholder="Search" value="">
+            <form class="navbar-search pull-right" action="">
+            	<input type="text" class="search-query" name="s" placeholder="Search" value="">
             </form>
+           
           </div><!--.nav-collapse -->
         </div><!-- container fluid -->
       </div> <!-- navbar-inner-->

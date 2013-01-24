@@ -155,7 +155,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 
 .product{
-		
+	margin-top:10px;
 }
 
 
@@ -404,6 +404,11 @@ ul.products li.product img{
 .single-product .images .thumbnails a img:hover, .single-product .images a img:hover{
 	border: 1px solid #09C;	
 }	
+
+.summary{
+	float:left;
+	max-width:100%;	
+}
 
 /*Product Sidebar CSS*/
 .single-product-sidebar{ border: 1px solid #CCC; float: left; width: 100%;}
