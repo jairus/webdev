@@ -15,7 +15,7 @@ Tags:
 	.leaderboard h1{ font-size: 35px; }
 	.btn-large{ padding: 6px; font-size: 18px; }
 	.featured-product-container{ margin: 10px 0;}
-	.products h3{ font-size: 1em;}
+	.products h3{ font-size: 0.90em; line-height:20px;}
 	.single-product .images{ width:100%;}
 	.input-text{ width: 160px; }
 	.nav-collapse.in.collapse{height:100% !important;}
@@ -39,7 +39,7 @@ Tags:
 	}
 }
 
-@media only screen and (min-width: 768px) and (max-width: 2048px){
+@media (min-width: 768px) and (max-width: 2048px){
 .nav-collapse.in.collapse{
 	height:0;	
 }
@@ -77,6 +77,9 @@ Tags:
 	float:left;	
 }
 
+.products h3{
+	font-size:1.387em;
+}
 }
 
 @media only screen and (min-width: 910px){
@@ -182,10 +185,6 @@ ul.products:after{
 	color: #4A413E;
     font-weight: bold;
     text-decoration: none;
-}
-
-.products h3{
-	font-size:1.387em;
 }
 
 .products a:hover{
@@ -410,6 +409,18 @@ ul.products li.product img{
 	max-width:100%;	
 }
 
+/*for search page*/
+
+.search-container{
+	width:100%;
+	float:left;	
+}
+
+.search-image{
+	float:left;
+		
+}
+
 /*Product Sidebar CSS*/
 .single-product-sidebar{ border: 1px solid #CCC; float: left; width: 100%;}
 .single-product-sidebar .widgettitle{ font-size: 16px; text-align:center; padding:2px 0 0 0; line-height:2; background-color:#0088CC; color:#fff; margin:0; width:100%; float:left;}
@@ -418,3 +429,7 @@ ul.products li.product img{
 .single-product-sidebar ul li img{width:80px; border: 1px solid #CCC; margin: 2px;}
 .single-product-sidebar ul li img:hover{border-color:#09C;}
 .total, .buttons{text-align:center;}
+
+.fb-like{
+	border:1px solid red;	
+}

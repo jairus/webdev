@@ -144,4 +144,41 @@ function remove_add_to_cart_buttons() {
 
 //Add walker function for twitter bootstrap wp-menu
 require_once(ABSPATH  . '/wp-content/themes/nmgshop/scripts/walker.php');
+
+add_action('woocommerce_share','wooshare');
+
+function wooshare(){
+global $post;	
+?>
+    <a id="fb-share" style='text-decoration:none;' type="icon_link" onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php the_title(); echo " | "; bloginfo('name'); ?>&amp;p[summary]=<?php echo $post->post_content; ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php 
+		
+	if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+		$default_image="http://example.com/image.jpg"; //replace this with a default image on your server or an image in your media library
+		echo  $default_image;
+	}
+	else{
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		echo  esc_attr( $thumbnail_src[0] );
+	}
+	
+	
+	 ?>','sharer','toolbar=0,status=0,width=580,height=325');" href="javascript: void(0)"> test
+    </a>
+    
+    <script type="text/javascript">
+		function shareOnTwitter(url) {
+		popupWindow = window.open('https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo get_the_title()."->"; ?>','popUpWindow','height=300,width=500,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); }
+	</script>
+    
+    <a id="shareOnTwitter" title="Tweet" href="javascript: void(0)" onclick="shareOnTwitter(this.href);return false;"><img alt="Tweet this!" src="http://twitter-badges.s3.amazonaws.com/t_small-a.png"></a>
+    
+    <script>
+		function setTwitterShareUrl(url) {
+$('#shareOnTwitter').attr('href', $('#shareOnTwitter').attr('href').replace(/%%shareUrl%%/,url));
+}
+	</script>
+    
+    
+<?php
+}
 ?>
