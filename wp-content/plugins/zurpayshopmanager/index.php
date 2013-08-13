@@ -1,5 +1,5 @@
 <?php
-//ob_start();
+ob_start();
 /*
 Plugin Name: Zurpay Shop Manager Panel
 Plugin URI: 
@@ -25,8 +25,8 @@ License: ZSMP
 		}
 		
 		$role = get_role('shop_manager');
-		
 		$role->add_cap('create_users');
+		$role->add_cap('manage_options');
 		
 		//add new page
 		if (isset($_GET['activated']) && is_admin()){

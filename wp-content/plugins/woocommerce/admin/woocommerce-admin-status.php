@@ -4,9 +4,16 @@
  *
  * @author 		WooThemes
  * @category 	Admin
- * @package 	WooCommerce
+ * @package 	WooCommerce/Admin/System Status
+ * @version     1.6.4
  */
 
+/**
+ * Output the content of the debugging page.
+ *
+ * @access public
+ * @return void
+ */
 function woocommerce_status() {
 	global $woocommerce;
 
@@ -237,7 +244,7 @@ function woocommerce_status() {
                 <tr>
                     <td><?php _e('Order Statuses','woocommerce')?></td>
                     <td><?php
-                    	$order_statuses = get_terms( 'shop_order_status', array( 'fields' => 'names' ) );
+                    	$order_statuses = get_terms( 'shop_order_status', array( 'fields' => 'names', 'hide_empty' => 0 ) );
                     	echo implode( ', ', $order_statuses );
                     ?></td>
                 </tr>
